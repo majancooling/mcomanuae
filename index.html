@@ -1,0 +1,1715 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Majan Cooling provides professional air conditioning installation, maintenance and repair. Request a service through WhatsApp.">
+  <meta name="theme-color" content="#071b36">
+  <meta property="og:title" content="Majan Cooling | Professional AC Services">
+  <meta property="og:description" content="Professional air conditioning installation, maintenance and repair. Book a service with Majan Cooling.">
+  <title>Majan Cooling - Professional AC Services</title><!-- Canva SDKs only load in Canva environment -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      box-sizing: border-box;
+    }
+    
+    .gradient-bg {
+      background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+    }
+    
+    .service-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    }
+    
+    .contact-button {
+      transition: all 0.3s ease;
+    }
+    
+    .contact-button:hover {
+      transform: scale(1.05);
+    }
+    
+    .fade-in-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    
+    .fade-in-up.animate {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    .fade-in-left {
+      opacity: 0;
+      transform: translateX(-30px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    
+    .fade-in-left.animate {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    
+    .fade-in-right {
+      opacity: 0;
+      transform: translateX(30px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    
+    .fade-in-right.animate {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    
+    .scale-in {
+      opacity: 0;
+      transform: scale(0.8);
+      transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    }
+    
+    .scale-in.animate {
+      opacity: 1;
+      transform: scale(1);
+    }
+    
+    .bounce-in {
+      opacity: 0;
+      transform: scale(0.3);
+      transition: opacity 0.6s ease-out, transform 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+    
+    .bounce-in.animate {
+      opacity: 1;
+      transform: scale(1);
+    }
+    
+    .stagger-1 { transition-delay: 0.1s; }
+    .stagger-2 { transition-delay: 0.2s; }
+    .stagger-3 { transition-delay: 0.3s; }
+    .stagger-4 { transition-delay: 0.4s; }
+    .stagger-5 { transition-delay: 0.5s; }
+    .stagger-6 { transition-delay: 0.6s; }
+    
+    .nav-slide-down {
+      opacity: 0;
+      transform: translateY(-20px);
+      animation: slideDown 0.8s ease-out forwards;
+    }
+    
+    @keyframes slideDown {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .nav-link {
+      position: relative;
+      transition: all 0.3s ease;
+    }
+    
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #3b82f6, #1d4ed8);
+      transition: all 0.3s ease;
+      transform: translateX(-50%);
+    }
+    
+    .nav-link:hover::after,
+    .nav-link.active::after {
+      width: 100%;
+    }
+    
+    .nav-link:hover {
+      transform: translateY(-2px);
+    }
+    
+    .logo-bounce {
+      animation: logoBounce 2s ease-in-out infinite;
+    }
+    
+    @keyframes logoBounce {
+      0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+      }
+      40% {
+        transform: translateY(-3px);
+      }
+      60% {
+        transform: translateY(-2px);
+      }
+    }
+    
+    .nav-item-stagger {
+      opacity: 0;
+      transform: translateY(-10px);
+      animation: navItemSlide 0.6s ease-out forwards;
+    }
+    
+    @keyframes navItemSlide {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .nav-item-stagger:nth-child(1) { animation-delay: 0.1s; }
+    .nav-item-stagger:nth-child(2) { animation-delay: 0.2s; }
+    .nav-item-stagger:nth-child(3) { animation-delay: 0.3s; }
+    .nav-item-stagger:nth-child(4) { animation-delay: 0.4s; }
+    .nav-item-stagger:nth-child(5) { animation-delay: 0.5s; }
+    
+    .mobile-menu-slide {
+      transform: translateY(-100%);
+      opacity: 0;
+      transition: all 0.3s ease-out;
+    }
+    
+    .mobile-menu-slide.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    
+    .mobile-nav-item {
+      opacity: 0;
+      transform: translateX(-20px);
+      transition: all 0.3s ease-out;
+    }
+    
+    .mobile-nav-item.show {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    
+    .hamburger-line {
+      transition: all 0.3s ease;
+    }
+    
+    .hamburger-active .hamburger-line:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+    
+    .hamburger-active .hamburger-line:nth-child(2) {
+      opacity: 0;
+    }
+    
+    .hamburger-active .hamburger-line:nth-child(3) {
+      transform: rotate(-45deg) translate(7px, -6px);
+    }
+
+    /* Storage Mode Indicator */
+    .storage-indicator {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: rgba(59, 130, 246, 0.9);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 12px;
+      z-index: 1000;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .github-upload-area {
+      border: 2px dashed #d1d5db;
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      background: #f9fafb;
+      transition: all 0.3s ease;
+    }
+
+    .github-upload-area:hover {
+      border-color: #3b82f6;
+      background: #eff6ff;
+    }
+
+    .github-upload-area.dragover {
+      border-color: #1d4ed8;
+      background: #dbeafe;
+    }
+  </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js" type="text/javascript"></script>
+ </head>
+ <body class="min-h-full">
+  <!-- Storage Mode Indicator -->
+  <div id="storage-indicator" class="storage-indicator">
+   <span id="storage-mode">Browser-only storage</span>
+  </div><!-- Header -->
+  <header class="bg-white shadow-lg sticky top-0 z-50 nav-slide-down">
+   <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center py-4">
+     <div class="flex items-center nav-item-stagger">
+      <img src="https://lh3.googleusercontent.com/sitesv/AAzXCkf86__dnEPPG5R2RzIMp1che46eJ8Uvwm1oqqKAuQm1JLt851xxRl9Eb7WGaqYhS9Q6cuXmKKl6AyH-Hf5hcuLB5SrashWVwB1deLfHt2jN71isJ1JmrzooT6NNNTGO7vp615djBHYLDRObmgmeeX8s0sh_sV2R0z8Ne7H9m99A7Mj0bZVVEA3VGYk=w16383" alt="Majan Cooling Logo" class="w-10 h-10 object-contain mr-3 logo-bounce" onerror="this.src=''; this.alt='Logo failed to load'; this.style.display='none';">
+      <div>
+       <h1 id="company-name" class="text-xl font-bold text-gray-900">Majan Cooling</h1>
+       <p id="tagline" class="text-xs text-gray-600">Professional AC Solutions</p>
+      </div>
+     </div><!-- Desktop Navigation -->
+     <div class="hidden md:flex items-center space-x-8">
+      <a href="#home" class="nav-link nav-item-stagger text-gray-700 hover:text-blue-600 font-medium transition-all duration-300 relative">Home</a> <a href="#services" class="nav-link nav-item-stagger text-gray-700 hover:text-blue-600 font-medium transition-all duration-300 relative">Services</a> <a href="#gallery" class="nav-link nav-item-stagger text-gray-700 hover:text-blue-600 font-medium transition-all duration-300 relative">Gallery</a> <a href="#about" class="nav-link nav-item-stagger text-gray-700 hover:text-blue-600 font-medium transition-all duration-300 relative">About</a> <a href="#contact" class="nav-link nav-item-stagger text-gray-700 hover:text-blue-600 font-medium transition-all duration-300 relative">Contact</a> <a href="https://wa.me/96892820633" target="_blank" rel="noopener noreferrer" class="nav-item-stagger bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-medium transition-all duration-300 shadow-sm hover:shadow-md hover:scale-105">Call Now</a>
+     </div><!-- Mobile menu button -->
+     <div class="md:hidden nav-item-stagger">
+      <button id="mobile-menu-button" class="text-gray-700 hover:text-blue-600 focus:outline-none focus:text-blue-600 transition-all duration-300 p-2">
+       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+        <path class="hamburger-line" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16" /> <path class="hamburger-line" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 12h16" /> <path class="hamburger-line" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 18h16" />
+       </svg></button>
+     </div>
+    </div><!-- Mobile Navigation Menu -->
+    <div id="mobile-menu" class="md:hidden hidden border-t border-gray-200 mobile-menu-slide">
+     <div class="px-2 pt-2 pb-3 space-y-1 bg-white">
+      <a href="#home" class="mobile-nav-link mobile-nav-item block px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-gray-50 font-medium transition-all duration-200 rounded-md">Home</a> <a href="#services" class="mobile-nav-link mobile-nav-item block px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-gray-50 font-medium transition-all duration-200 rounded-md">Services</a> <a href="#gallery" class="mobile-nav-link mobile-nav-item block px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-gray-50 font-medium transition-all duration-200 rounded-md">Gallery</a> <a href="#about" class="mobile-nav-link mobile-nav-item block px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-gray-50 font-medium transition-all duration-200 rounded-md">About</a> <a href="#contact" class="mobile-nav-link mobile-nav-item block px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-gray-50 font-medium transition-all duration-200 rounded-md">Contact</a>
+      <div class="px-3 py-2 mobile-nav-item">
+       <a href="https://wa.me/96892820633" target="_blank" rel="noopener noreferrer" class="block w-full text-center bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-medium transition-all duration-200">Call Now</a>
+      </div>
+     </div>
+    </div>
+   </nav>
+  </header><!-- Hero Section -->
+  <section id="home" class="gradient-bg text-white py-20 relative overflow-hidden">
+   <!-- Background Graphics -->
+   <div class="absolute inset-0 opacity-10">
+    <svg class="absolute top-10 left-10 w-32 h-32" viewbox="0 0 100 100" fill="currentColor">
+     <circle cx="20" cy="20" r="2" /> <circle cx="40" cy="20" r="2" /> <circle cx="60" cy="20" r="2" /> <circle cx="80" cy="20" r="2" /> <circle cx="20" cy="40" r="2" /> <circle cx="40" cy="40" r="2" /> <circle cx="60" cy="40" r="2" /> <circle cx="80" cy="40" r="2" /> <circle cx="20" cy="60" r="2" /> <circle cx="40" cy="60" r="2" /> <circle cx="60" cy="60" r="2" /> <circle cx="80" cy="60" r="2" /> <circle cx="20" cy="80" r="2" /> <circle cx="40" cy="80" r="2" /> <circle cx="60" cy="80" r="2" /> <circle cx="80" cy="80" r="2" />
+    </svg>
+    <svg class="absolute top-20 right-20 w-24 h-24" viewbox="0 0 100 100" fill="currentColor">
+     <path d="M50 10 L90 90 L10 90 Z" />
+    </svg>
+    <svg class="absolute bottom-10 left-1/4 w-20 h-20" viewbox="0 0 100 100" fill="currentColor">
+     <rect x="10" y="10" width="80" height="80" rx="10" />
+    </svg>
+   </div>
+   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+    <!-- Main AC Unit Graphic -->
+    <div class="mb-8 bounce-in">
+     <svg class="w-32 h-32 mx-auto mb-6" viewbox="0 0 200 200" fill="none">
+      <!-- AC Unit Body --> <rect x="20" y="60" width="160" height="100" rx="15" fill="white" opacity="0.9" /> <rect x="30" y="70" width="140" height="80" rx="10" fill="#e5e7eb" /> <!-- Vents --> <line x1="40" y1="85" x2="160" y2="85" stroke="#9ca3af" stroke-width="2" /> <line x1="40" y1="95" x2="160" y2="95" stroke="#9ca3af" stroke-width="2" /> <line x1="40" y1="105" x2="160" y2="105" stroke="#9ca3af" stroke-width="2" /> <line x1="40" y1="115" x2="160" y2="115" stroke="#9ca3af" stroke-width="2" /> <line x1="40" y1="125" x2="160" y2="125" stroke="#9ca3af" stroke-width="2" /> <line x1="40" y1="135" x2="160" y2="135" stroke="#9ca3af" stroke-width="2" /> <!-- Cool Air Waves --> <path d="M50 40 Q60 30 70 40 Q80 50 90 40 Q100 30 110 40" stroke="white" stroke-width="3" fill="none" opacity="0.7" /> <path d="M60 25 Q70 15 80 25 Q90 35 100 25" stroke="white" stroke-width="2" fill="none" opacity="0.5" /> <path d="M70 10 Q80 5 90 10" stroke="white" stroke-width="2" fill="none" opacity="0.3" /> <!-- Brand Logo Area --> <circle cx="100" cy="110" r="15" fill="white" /> <path d="M95 105 L105 105 L100 115 Z" fill="#3b82f6" />
+     </svg>
+    </div>
+    <h2 id="hero-title" class="text-5xl font-bold mb-6 fade-in-up stagger-1">Expert Air Conditioning Services</h2>
+    <p id="hero-subtitle" class="text-xl mb-8 max-w-3xl mx-auto fade-in-up stagger-2">Professional installation, maintenance, and repair services for residential and commercial air conditioning systems. Keep your space comfortable year-round.</p><button id="cta-button" class="contact-button bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 shadow-lg fade-in-up stagger-3">Book Now</button>
+   </div>
+  </section><!-- Services Section -->
+  <section id="services" class="py-20 bg-gray-50">
+   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16 fade-in-up">
+     <h3 id="services-title" class="text-4xl font-bold text-gray-900 mb-4">Our Services</h3>
+     <p class="text-xl text-gray-600">Comprehensive AC solutions for all your cooling needs</p>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
+     <!-- Installation -->
+     <div class="service-card bg-white p-8 rounded-xl shadow-lg relative overflow-hidden fade-in-up stagger-1">
+      <div class="absolute top-0 right-0 w-32 h-32 opacity-5">
+       <svg viewbox="0 0 100 100" fill="currentColor" class="w-full h-full">
+        <circle cx="20" cy="20" r="3" /> <circle cx="50" cy="20" r="3" /> <circle cx="80" cy="20" r="3" /> <circle cx="20" cy="50" r="3" /> <circle cx="50" cy="50" r="3" /> <circle cx="80" cy="50" r="3" /> <circle cx="20" cy="80" r="3" /> <circle cx="50" cy="80" r="3" /> <circle cx="80" cy="80" r="3" />
+       </svg>
+      </div>
+      <div class="relative z-10">
+       <div class="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mb-6 shadow-sm">
+        <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+        </svg>
+       </div>
+       <h4 class="text-2xl font-bold text-gray-900 mb-4">Installation</h4>
+       <p class="text-gray-600 mb-6">Professional installation of new AC systems with proper sizing and optimal placement for maximum efficiency.</p>
+       <ul class="text-gray-600 space-y-2">
+        <li class="flex items-center"><span class="w-2 h-2 bg-blue-400 rounded-full mr-3"></span>System sizing consultation</li>
+        <li class="flex items-center"><span class="w-2 h-2 bg-blue-400 rounded-full mr-3"></span>Energy-efficient units</li>
+        <li class="flex items-center"><span class="w-2 h-2 bg-blue-400 rounded-full mr-3"></span>Professional installation</li>
+        <li class="flex items-center"><span class="w-2 h-2 bg-blue-400 rounded-full mr-3"></span>Warranty coverage</li>
+       </ul>
+      </div>
+     </div><!-- Maintenance -->
+     <div class="service-card bg-white p-8 rounded-xl shadow-lg relative overflow-hidden fade-in-up stagger-2">
+      <div class="absolute top-0 right-0 w-32 h-32 opacity-5">
+       <svg viewbox="0 0 100 100" fill="currentColor" class="w-full h-full">
+        <path d="M10 10 L30 10 L20 30 Z" /> <path d="M40 10 L60 10 L50 30 Z" /> <path d="M70 10 L90 10 L80 30 Z" /> <path d="M10 40 L30 40 L20 60 Z" /> <path d="M40 40 L60 40 L50 60 Z" /> <path d="M70 40 L90 40 L80 60 Z" /> <path d="M10 70 L30 70 L20 90 Z" /> <path d="M40 70 L60 70 L50 90 Z" /> <path d="M70 70 L90 70 L80 90 Z" />
+       </svg>
+      </div>
+      <div class="relative z-10">
+       <div class="w-16 h-16 bg-green-100 rounded-lg flex items-center justify-center mb-6 shadow-sm">
+        <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+        </svg>
+       </div>
+       <h4 class="text-2xl font-bold text-gray-900 mb-4">Maintenance</h4>
+       <p class="text-gray-600 mb-6">Regular maintenance services to keep your AC running efficiently and extend its lifespan.</p>
+       <ul class="text-gray-600 space-y-2">
+        <li class="flex items-center"><span class="w-2 h-2 bg-green-400 rounded-full mr-3"></span>Filter replacement</li>
+        <li class="flex items-center"><span class="w-2 h-2 bg-green-400 rounded-full mr-3"></span>Coil cleaning</li>
+        <li class="flex items-center"><span class="w-2 h-2 bg-green-400 rounded-full mr-3"></span>System inspection</li>
+        <li class="flex items-center"><span class="w-2 h-2 bg-green-400 rounded-full mr-3"></span>Performance optimization</li>
+       </ul>
+      </div>
+     </div><!-- Repair -->
+     <div class="service-card bg-white p-8 rounded-xl shadow-lg relative overflow-hidden fade-in-up stagger-3">
+      <div class="absolute top-0 right-0 w-32 h-32 opacity-5">
+       <svg viewbox="0 0 100 100" fill="currentColor" class="w-full h-full">
+        <rect x="10" y="10" width="15" height="15" rx="3" /> <rect x="35" y="10" width="15" height="15" rx="3" /> <rect x="60" y="10" width="15" height="15" rx="3" /> <rect x="10" y="35" width="15" height="15" rx="3" /> <rect x="35" y="35" width="15" height="15" rx="3" /> <rect x="60" y="35" width="15" height="15" rx="3" /> <rect x="10" y="60" width="15" height="15" rx="3" /> <rect x="35" y="60" width="15" height="15" rx="3" /> <rect x="60" y="60" width="15" height="15" rx="3" />
+       </svg>
+      </div>
+      <div class="relative z-10">
+       <div class="w-16 h-16 bg-red-100 rounded-lg flex items-center justify-center mb-6 shadow-sm">
+        <svg class="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a1 1 0 01-1-1V9a1 1 0 011-1h1a2 2 0 100-4H4a1 1 0 01-1-1V4a1 1 0 011-1h3a1 1 0 001-1z" />
+        </svg>
+       </div>
+       <h4 class="text-2xl font-bold text-gray-900 mb-4">Repair</h4>
+       <p class="text-gray-600 mb-6">Fast and reliable repair services for all AC brands and models with genuine parts.</p>
+       <ul class="text-gray-600 space-y-2">
+        <li class="flex items-center"><span class="w-2 h-2 bg-red-400 rounded-full mr-3"></span>24/7 emergency service</li>
+        <li class="flex items-center"><span class="w-2 h-2 bg-red-400 rounded-full mr-3"></span>Diagnostic testing</li>
+        <li class="flex items-center"><span class="w-2 h-2 bg-red-400 rounded-full mr-3"></span>Genuine parts</li>
+        <li class="flex items-center"><span class="w-2 h-2 bg-red-400 rounded-full mr-3"></span>Quick turnaround</li>
+       </ul>
+      </div>
+     </div><!-- PC Board Repair -->
+     <div class="service-card bg-white p-8 rounded-xl shadow-lg relative overflow-hidden fade-in-up stagger-4">
+      <div class="absolute top-0 right-0 w-32 h-32 opacity-5">
+       <svg viewbox="0 0 100 100" fill="currentColor" class="w-full h-full">
+        <circle cx="15" cy="15" r="2" /> <circle cx="35" cy="15" r="2" /> <circle cx="55" cy="15" r="2" /> <circle cx="75" cy="15" r="2" /> <circle cx="15" cy="35" r="2" /> <circle cx="35" cy="35" r="2" /> <circle cx="55" cy="35" r="2" /> <circle cx="75" cy="35" r="2" /> <circle cx="15" cy="55" r="2" /> <circle cx="35" cy="55" r="2" /> <circle cx="55" cy="55" r="2" /> <circle cx="75" cy="55" r="2" /> <circle cx="15" cy="75" r="2" /> <circle cx="35" cy="75" r="2" /> <circle cx="55" cy="75" r="2" /> <circle cx="75" cy="75" r="2" />
+       </svg>
+      </div>
+      <div class="relative z-10">
+       <div class="w-16 h-16 bg-purple-100 rounded-lg flex items-center justify-center mb-6 shadow-sm">
+        <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+        </svg>
+       </div>
+       <h4 class="text-2xl font-bold text-gray-900 mb-4">PC Board Repair</h4>
+       <p class="text-gray-600 mb-6">Expert repair and replacement of AC control boards and electronic components for all brands.</p>
+       <ul class="text-gray-600 space-y-2">
+        <li class="flex items-center"><span class="w-2 h-2 bg-purple-400 rounded-full mr-3"></span>Circuit board diagnosis</li>
+        <li class="flex items-center"><span class="w-2 h-2 bg-purple-400 rounded-full mr-3"></span>Component replacement</li>
+        <li class="flex items-center"><span class="w-2 h-2 bg-purple-400 rounded-full mr-3"></span>Electronic testing</li>
+        <li class="flex items-center"><span class="w-2 h-2 bg-purple-400 rounded-full mr-3"></span>All AC brands supported</li>
+       </ul>
+      </div>
+     </div><!-- Motor Winding -->
+     <div class="service-card bg-white p-8 rounded-xl shadow-lg relative overflow-hidden fade-in-up stagger-5">
+      <div class="absolute top-0 right-0 w-32 h-32 opacity-5">
+       <svg viewbox="0 0 100 100" fill="currentColor" class="w-full h-full">
+        <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="3" /> <circle cx="50" cy="50" r="30" fill="none" stroke="currentColor" stroke-width="2" /> <circle cx="50" cy="50" r="20" fill="none" stroke="currentColor" stroke-width="2" /> <circle cx="50" cy="50" r="10" fill="none" stroke="currentColor" stroke-width="2" /> <circle cx="50" cy="50" r="5" />
+       </svg>
+      </div>
+      <div class="relative z-10">
+       <div class="w-16 h-16 bg-orange-100 rounded-lg flex items-center justify-center mb-6 shadow-sm">
+        <svg class="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+        </svg>
+       </div>
+       <h4 class="text-2xl font-bold text-gray-900 mb-4">Motor Winding</h4>
+       <p class="text-gray-600 mb-6">Professional motor rewinding and repair services for AC compressors and fan motors.</p>
+       <ul class="text-gray-600 space-y-2">
+        <li class="flex items-center"><span class="w-2 h-2 bg-orange-400 rounded-full mr-3"></span>Compressor motor repair</li>
+        <li class="flex items-center"><span class="w-2 h-2 bg-orange-400 rounded-full mr-3"></span>Fan motor rewinding</li>
+        <li class="flex items-center"><span class="w-2 h-2 bg-orange-400 rounded-full mr-3"></span>Motor testing &amp; balancing</li>
+        <li class="flex items-center"><span class="w-2 h-2 bg-orange-400 rounded-full mr-3"></span>Quality copper wiring</li>
+       </ul>
+      </div>
+     </div><!-- AMC Contracts -->
+     <div class="service-card bg-white p-8 rounded-xl shadow-lg relative overflow-hidden fade-in-up stagger-6 lg:col-span-2 xl:col-span-1">
+      <div class="absolute top-0 right-0 w-32 h-32 opacity-5">
+       <svg viewbox="0 0 100 100" fill="currentColor" class="w-full h-full">
+        <rect x="10" y="20" width="80" height="60" rx="5" fill="none" stroke="currentColor" stroke-width="3" /> <line x1="25" y1="35" x2="75" y2="35" stroke="currentColor" stroke-width="2" /> <line x1="25" y1="45" x2="60" y2="45" stroke="currentColor" stroke-width="2" /> <line x1="25" y1="55" x2="70" y2="55" stroke="currentColor" stroke-width="2" /> <line x1="25" y1="65" x2="55" y2="65" stroke="currentColor" stroke-width="2" /> <circle cx="75" cy="65" r="8" /> <path d="M72 65 L74 67 L78 63" stroke="white" stroke-width="2" fill="none" />
+       </svg>
+      </div>
+      <div class="relative z-10">
+       <div class="w-16 h-16 bg-indigo-100 rounded-lg flex items-center justify-center mb-6 shadow-sm">
+        <svg class="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+        </svg>
+       </div>
+       <h4 class="text-2xl font-bold text-gray-900 mb-4">AMC Contracts</h4>
+       <p class="text-gray-600 mb-6">Comprehensive yearly renewable Annual Maintenance Contracts for hassle-free AC service and maintenance.</p>
+       <ul class="text-gray-600 space-y-2">
+        <li class="flex items-center"><span class="w-2 h-2 bg-indigo-400 rounded-full mr-3"></span>Yearly renewable contracts</li>
+        <li class="flex items-center"><span class="w-2 h-2 bg-indigo-400 rounded-full mr-3"></span>Scheduled maintenance visits</li>
+        <li class="flex items-center"><span class="w-2 h-2 bg-indigo-400 rounded-full mr-3"></span>Priority service calls</li>
+        <li class="flex items-center"><span class="w-2 h-2 bg-indigo-400 rounded-full mr-3"></span>Cost-effective solutions</li>
+       </ul>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section><!-- Gallery Section -->
+  <section id="gallery" class="py-20 bg-white">
+   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16 fade-in-up">
+     <h3 id="gallery-title" class="text-4xl font-bold text-gray-900 mb-4">Our Work Gallery</h3>
+     <p class="text-xl text-gray-600">See our professional AC installations and repair work</p>
+    </div><!-- Add Photo Section (Admin Only - Hidden from public) -->
+    <div id="admin-photo-section" class="bg-blue-50 border border-blue-200 rounded-xl p-6 mb-12 fade-in-up" style="display: none;">
+     <h4 class="text-xl font-semibold text-blue-900 mb-4">📸 Add New Photo (Admin Only)</h4><!-- GitHub Photo Upload Method -->
+     <div id="github-upload-method" class="mb-6 p-4 bg-gradient-to-r from-purple-50 to-blue-50 border border-purple-200 rounded-lg">
+      <h5 class="font-semibold text-purple-900 mb-3">🐙 GitHub Photo Upload Guide</h5>
+      <div class="space-y-3 text-sm text-purple-800">
+       <p><strong>Step 1:</strong> Upload your photos to GitHub repository in an <code class="bg-purple-100 px-2 py-1 rounded">images/</code> folder</p>
+       <p><strong>Step 2:</strong> Get the raw GitHub URL (e.g., <code class="bg-purple-100 px-2 py-1 rounded">https://raw.githubusercontent.com/username/repo/main/images/photo.jpg</code>)</p>
+       <p><strong>Step 3:</strong> Use that URL in the form below</p>
+       <div class="mt-3 p-3 bg-white border border-purple-200 rounded">
+        <p class="font-medium text-purple-900">Alternative: Use any image hosting service</p>
+        <ul class="mt-2 space-y-1 text-purple-700">
+         <li>• <strong>Imgur:</strong> Upload → Copy direct link</li>
+         <li>• <strong>GitHub Issues:</strong> Drag image → Copy generated URL</li>
+         <li>• <strong>Cloudinary/ImageKit:</strong> Professional hosting</li>
+        </ul>
+       </div>
+      </div>
+     </div>
+     <form id="photo-form" class="space-y-4">
+      <div class="grid md:grid-cols-2 gap-4">
+       <div>
+        <label for="photo-url" class="block text-sm font-medium text-blue-800 mb-2">Photo URL</label> <input type="url" id="photo-url" name="photo-url" required placeholder="https://raw.githubusercontent.com/username/repo/main/images/photo.jpg" class="w-full px-4 py-3 border border-blue-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200">
+       </div>
+       <div>
+        <label for="photo-title" class="block text-sm font-medium text-blue-800 mb-2">Photo Title</label> <input type="text" id="photo-title" name="photo-title" required placeholder="e.g., Split AC Installation - Villa" class="w-full px-4 py-3 border border-blue-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200">
+       </div>
+      </div>
+      <div>
+       <label for="photo-description" class="block text-sm font-medium text-blue-800 mb-2">Description</label> <textarea id="photo-description" name="photo-description" rows="2" placeholder="Brief description of the work..." class="w-full px-4 py-3 border border-blue-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"></textarea>
+      </div>
+      <div class="grid md:grid-cols-2 gap-4">
+       <div>
+        <label for="photo-category" class="block text-sm font-medium text-blue-800 mb-2">Category</label> <select id="photo-category" name="photo-category" required class="w-full px-4 py-3 border border-blue-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"> <option value="">Select category</option> <option value="installation">Installation</option> <option value="maintenance">Maintenance</option> <option value="repair">Repair</option> <option value="commercial">Commercial</option> <option value="residential">Residential</option> </select>
+       </div>
+       <div>
+        <label for="photo-location" class="block text-sm font-medium text-blue-800 mb-2">Location (Optional)</label> <input type="text" id="photo-location" name="photo-location" placeholder="e.g., Muscat, Oman" class="w-full px-4 py-3 border border-blue-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200">
+       </div>
+      </div><button type="submit" id="add-photo-btn" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 shadow-sm hover:shadow-md"> <span id="add-photo-text">Add Photo</span> <span id="add-photo-loading" class="hidden">Adding...</span> </button>
+     </form>
+     <div id="photo-form-message" class="mt-4 p-4 rounded-lg hidden"></div><!-- Gallery Stats (Admin Only) -->
+     <div class="mt-6 p-4 bg-white border border-blue-200 rounded-lg">
+      <h5 class="font-semibold text-blue-900 mb-2">📊 Gallery Statistics</h5>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+       <div class="text-center">
+        <div class="text-2xl font-bold text-blue-600" id="total-photos">
+         0
+        </div>
+        <div class="text-blue-800">
+         Total Photos
+        </div>
+       </div>
+       <div class="text-center">
+        <div class="text-2xl font-bold text-green-600" id="installation-count">
+         0
+        </div>
+        <div class="text-blue-800">
+         Installations
+        </div>
+       </div>
+       <div class="text-center">
+        <div class="text-2xl font-bold text-orange-600" id="maintenance-count">
+         0
+        </div>
+        <div class="text-blue-800">
+         Maintenance
+        </div>
+       </div>
+       <div class="text-center">
+        <div class="text-2xl font-bold text-red-600" id="repair-count">
+         0
+        </div>
+        <div class="text-blue-800">
+         Repairs
+        </div>
+       </div>
+      </div>
+     </div>
+    </div><!-- Filter Buttons -->
+    <div class="flex flex-wrap justify-center gap-3 mb-8 fade-in-up">
+     <button class="filter-btn active bg-blue-600 text-white px-6 py-2 rounded-full font-medium transition-all duration-200 hover:bg-blue-700" data-filter="all"> All Photos </button> <button class="filter-btn bg-gray-200 text-gray-700 px-6 py-2 rounded-full font-medium transition-all duration-200 hover:bg-gray-300" data-filter="installation"> Installation </button> <button class="filter-btn bg-gray-200 text-gray-700 px-6 py-2 rounded-full font-medium transition-all duration-200 hover:bg-gray-300" data-filter="maintenance"> Maintenance </button> <button class="filter-btn bg-gray-200 text-gray-700 px-6 py-2 rounded-full font-medium transition-all duration-200 hover:bg-gray-300" data-filter="repair"> Repair </button> <button class="filter-btn bg-gray-200 text-gray-700 px-6 py-2 rounded-full font-medium transition-all duration-200 hover:bg-gray-300" data-filter="commercial"> Commercial </button> <button class="filter-btn bg-gray-200 text-gray-700 px-6 py-2 rounded-full font-medium transition-all duration-200 hover:bg-gray-300" data-filter="residential"> Residential </button>
+    </div><!-- Photo Gallery Grid -->
+    <div id="gallery-grid" class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+     <!-- Photos will be dynamically loaded here -->
+     <div id="no-photos" class="col-span-full text-center py-12 text-gray-500">
+      <svg class="w-16 h-16 mx-auto mb-4 text-gray-300" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+      </svg>
+      <p class="text-lg">No photos in the gallery yet.</p>
+      <p class="text-sm">Add your first photo using the admin panel!</p>
+     </div>
+    </div>
+   </div><!-- Photo Modal -->
+   <div id="photo-modal" class="fixed inset-0 bg-black bg-opacity-75 z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-xl max-w-4xl max-h-full overflow-auto">
+     <div class="p-6">
+      <div class="flex justify-between items-start mb-4">
+       <div>
+        <h3 id="modal-title" class="text-2xl font-bold text-gray-900"></h3>
+        <p id="modal-category" class="text-blue-600 font-medium"></p>
+       </div><button id="close-modal" class="text-gray-400 hover:text-gray-600 transition-colors duration-200">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg></button>
+      </div><img id="modal-image" src="" alt="" class="w-full h-auto rounded-lg mb-4">
+      <div class="space-y-2">
+       <p id="modal-description" class="text-gray-700"></p>
+       <p id="modal-location" class="text-gray-500 text-sm"></p>
+       <p id="modal-date" class="text-gray-400 text-xs"></p>
+      </div>
+      <div id="admin-delete-section" class="mt-4 flex justify-end" style="display: none;">
+       <button id="delete-photo-btn" class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg font-medium transition-all duration-200"> Delete Photo (Admin Only) </button>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section><!-- About Section -->
+  <section id="about" class="py-20">
+   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+     <div class="fade-in-left">
+      <h3 class="text-4xl font-bold text-gray-900 mb-6">Why Choose Majan Cooling?</h3>
+      <p class="text-lg text-gray-600 mb-6">With over 30+ years of experience in the HVAC industry and 300+ trusting customers, we provide reliable, efficient, and professional air conditioning services throughout Oman and the UAE.</p>
+      <div class="space-y-4">
+       <div class="flex items-center">
+        <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+         <svg class="w-4 h-4 text-blue-600" fill="currentColor" viewbox="0 0 20 20">
+          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+         </svg>
+        </div><span class="text-gray-700">Licensed and insured professionals</span>
+       </div>
+       <div class="flex items-center">
+        <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+         <svg class="w-4 h-4 text-blue-600" fill="currentColor" viewbox="0 0 20 20">
+          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+         </svg>
+        </div><span class="text-gray-700">24/7 emergency service available</span>
+       </div>
+       <div class="flex items-center">
+        <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+         <svg class="w-4 h-4 text-blue-600" fill="currentColor" viewbox="0 0 20 20">
+          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+         </svg>
+        </div><span class="text-gray-700">Affordable pricing and transparent quotes</span>
+       </div>
+       <div class="flex items-center">
+        <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+         <svg class="w-4 h-4 text-blue-600" fill="currentColor" viewbox="0 0 20 20">
+          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+         </svg>
+        </div><span class="text-gray-700">Satisfaction guarantee on all work</span>
+       </div>
+      </div>
+     </div>
+     <div class="fade-in-right">
+      <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-2xl">
+       <svg class="w-full h-64" viewbox="0 0 400 300" fill="none">
+        <!-- Technician Figure --> <circle cx="200" cy="80" r="25" fill="#fbbf24" /> <rect x="185" y="105" width="30" height="50" rx="15" fill="#3b82f6" /> <rect x="175" y="125" width="50" height="30" rx="5" fill="#1e40af" /> <rect x="190" y="155" width="20" height="40" fill="#374151" /> <circle cx="185" cy="175" r="8" fill="#f3f4f6" /> <circle cx="215" cy="175" r="8" fill="#f3f4f6" /> <!-- Tools --> <rect x="160" y="140" width="15" height="3" fill="#6b7280" /> <rect x="225" y="140" width="15" height="3" fill="#6b7280" /> <!-- AC Unit --> <rect x="100" y="200" width="200" height="80" rx="10" fill="#e5e7eb" /> <rect x="110" y="210" width="180" height="60" rx="5" fill="#f9fafb" /> <!-- Vents --> <line x1="120" y1="220" x2="280" y2="220" stroke="#9ca3af" stroke-width="2" /> <line x1="120" y1="230" x2="280" y2="230" stroke="#9ca3af" stroke-width="2" /> <line x1="120" y1="240" x2="280" y2="240" stroke="#9ca3af" stroke-width="2" /> <line x1="120" y1="250" x2="280" y2="250" stroke="#9ca3af" stroke-width="2" /> <line x1="120" y1="260" x2="280" y2="260" stroke="#9ca3af" stroke-width="2" /> <!-- Cool air effect --> <path d="M200 190 Q210 180 220 190 Q230 200 240 190" stroke="#3b82f6" stroke-width="2" fill="none" opacity="0.6" /> <path d="M180 185 Q190 175 200 185 Q210 195 220 185" stroke="#3b82f6" stroke-width="2" fill="none" opacity="0.4" />
+       </svg>
+      </div>
+     </div>
+    </div><!-- Our Story -->
+    <div class="bg-gradient-to-r from-blue-50 to-indigo-50 p-12 rounded-2xl mb-20 fade-in-up">
+     <h3 class="text-4xl font-bold text-gray-900 mb-6">Our Story</h3>
+     <div class="space-y-6 text-gray-700 leading-relaxed">
+      <p class="text-lg">Majan Cooling Co. was founded in <span class="font-semibold text-blue-600">2005</span> as a small air conditioning service company, initially serving limited areas in Darsait and Ruwi, Oman. What started as a humble operation with a passion for excellence has grown into a trusted name across the entire Sultanate of Oman and now extends to the United Arab Emirates.</p>
+      <p class="text-lg">Over the years, our dedication to quality and customer satisfaction has driven our remarkable growth. Today, we proudly serve <span class="font-semibold text-blue-600">300+ satisfied customers</span> with our comprehensive AC solutions. Our expansion from a neighborhood service provider to serving almost all of Oman and now the UAE reflects our commitment to delivering exceptional cooling solutions across the Gulf region.</p>
+      <p class="text-lg">What makes us unique is our unwavering commitment to <span class="font-semibold text-blue-600">premium quality</span>. We never cut corners. Instead, we exclusively partner with the best brands and use only top-tier components for every installation and repair. Our team of highly skilled technicians ensures that every job is completed with utmost care and responsibility.</p>
+      <p class="text-lg">Most importantly, we deliver all these premium services at <span class="font-semibold text-blue-600">affordable prices</span>, making quality AC solutions accessible to everyone. This is our promise to every customer—exceptional quality without breaking the bank.</p>
+     </div>
+    </div><!-- Mission & Vision Section -->
+    <div class="grid lg:grid-cols-2 gap-12 mb-20"><!-- Mission -->
+     <div class="bg-white p-8 rounded-2xl shadow-lg border-l-4 border-blue-600 fade-in-left">
+      <div class="flex items-center mb-6">
+       <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
+        <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+        </svg>
+       </div>
+       <h4 class="text-3xl font-bold text-gray-900">Our Mission</h4>
+      </div>
+      <div class="space-y-4 text-gray-600 leading-relaxed">
+       <p>Our mission is to provide the <span class="font-semibold text-gray-900">best air conditioning services at affordable prices</span>, ensuring that premium cooling solutions are accessible to every customer in Oman and the UAE.</p>
+       <p>We believe in building a workplace where our employees thrive—with fair compensation, collaborative workspaces that encourage teamwork, and abundant growth opportunities. Our team is our strength, and we invest in their development.</p>
+       <p>We are committed to delivering <span class="font-semibold text-gray-900">high-end quality products for durability</span> and excellent service that ensures long-lasting excellence in air conditioning systems. Every job we undertake reflects our dedication to customer satisfaction and responsibility.</p>
+      </div>
+     </div><!-- Vision -->
+     <div class="bg-white p-8 rounded-2xl shadow-lg border-l-4 border-indigo-600 fade-in-right">
+      <div class="flex items-center mb-6">
+       <div class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mr-4">
+        <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 015.646 5.646M9 9h.01M15 15h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5-5.354a1 1 0 10-1.414-1.414m7.071 7.071a1 1 0 10-1.414-1.414M9 19a1 1 0 10-1.414-1.414m7.071-7.071a1 1 0 10-1.414-1.414" />
+        </svg>
+       </div>
+       <h4 class="text-3xl font-bold text-gray-900">Our Vision</h4>
+      </div>
+      <div class="space-y-4 text-gray-600 leading-relaxed">
+       <p>Our vision is to bring <span class="font-semibold text-gray-900">comfort and coolness to every home and business</span> in Oman and the UAE at affordable rates, making quality of life enhancements accessible to all.</p>
+       <p>We aspire to be the <span class="font-semibold text-gray-900">trusted partner</span> for AC solutions across the Gulf region—known for delivering budget-conscious, high-quality work that doesn't compromise on excellence or service.</p>
+       <p>We envision a future where every customer in Oman and the UAE can enjoy reliable, professional air conditioning services with the confidence that they're receiving the best quality at the most reasonable price in the market.</p>
+      </div>
+     </div>
+    </div><!-- Core Values -->
+    <div class="fade-in-up">
+     <h3 class="text-4xl font-bold text-gray-900 mb-12 text-center">Our Core Values</h3>
+     <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="bg-white p-6 rounded-xl shadow-md text-center hover:shadow-lg transition-shadow duration-300">
+       <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+        <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+       </div>
+       <h5 class="text-xl font-semibold text-gray-900 mb-2">Quality</h5>
+       <p class="text-gray-600">Premium materials and expert workmanship in every project</p>
+      </div>
+      <div class="bg-white p-6 rounded-xl shadow-md text-center hover:shadow-lg transition-shadow duration-300">
+       <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+        <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+       </div>
+       <h5 class="text-xl font-semibold text-gray-900 mb-2">Affordability</h5>
+       <p class="text-gray-600">Premium services at prices everyone can afford</p>
+      </div>
+      <div class="bg-white p-6 rounded-xl shadow-md text-center hover:shadow-lg transition-shadow duration-300">
+       <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+        <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.856-1.487M15 10a3 3 0 11-6 0 3 3 0 016 0z" />
+        </svg>
+       </div>
+       <h5 class="text-xl font-semibold text-gray-900 mb-2">Teamwork</h5>
+       <p class="text-gray-600">Skilled professionals working together for your comfort</p>
+      </div>
+      <div class="bg-white p-6 rounded-xl shadow-md text-center hover:shadow-lg transition-shadow duration-300">
+       <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+        <svg class="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
+        </svg>
+       </div>
+       <h5 class="text-xl font-semibold text-gray-900 mb-2">Responsibility</h5>
+       <p class="text-gray-600">Accountable service with utmost care for your needs</p>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section><!-- Contact Section -->
+  <section id="contact" class="py-20 bg-gray-50">
+   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16 fade-in-up">
+     <h3 class="text-4xl font-bold text-gray-900 mb-4">Get In Touch</h3>
+     <p class="text-xl text-gray-600">Ready to schedule your AC service? Contact us today!</p>
+    </div>
+    <div class="grid lg:grid-cols-2 gap-12">
+     <!-- Contact Form -->
+     <div class="bg-white p-8 rounded-xl shadow-lg fade-in-left">
+      <h4 class="text-2xl font-bold text-gray-900 mb-6">Send us a message</h4>
+      <form id="contact-form" class="space-y-6">
+       <div>
+        <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Full Name</label> <input type="text" id="name" name="name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200">
+       </div>
+       <div>
+        <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">Phone Number</label> <input type="tel" id="phone" name="phone" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200">
+       </div>
+       <div>
+        <label for="service" class="block text-sm font-medium text-gray-700 mb-2">Service Needed</label> <select id="service" name="service" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"> <option value="">Select a service</option> <option value="installation">Installation</option> <option value="maintenance">Maintenance</option> <option value="repair">Repair</option> <option value="amc-contract">AMC Contract</option> <option value="consultation">Consultation</option> </select>
+       </div>
+       <div>
+        <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Message</label> <textarea id="message" name="message" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200" placeholder="Tell us about your AC needs..."></textarea>
+       </div><button type="submit" id="submit-btn" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 shadow-sm hover:shadow-md"> <span id="submit-text">Send Message</span> <span id="submit-loading" class="hidden">Sending...</span> </button>
+      </form>
+      <div id="form-message" class="mt-4 p-4 rounded-lg hidden"></div><!-- Message Storage Info (Admin Only - Hidden from public) -->
+      <div id="admin-message-info" class="mt-6 p-4 bg-blue-50 border border-blue-200 rounded-lg" style="display: none;">
+       <h5 class="font-semibold text-blue-900 mb-2">📋 Message Storage (Admin Only)</h5>
+       <p class="text-blue-800 text-sm mb-2">All contact form submissions are automatically saved to your browser storage for easy management.</p>
+       <div class="text-blue-700 text-sm">
+        <p><strong>Total Messages:</strong> <span id="message-count">0</span></p>
+        <p><strong>Storage:</strong> <span id="storage-location">Browser Storage</span> (accessible in developer tools)</p>
+       </div>
+      </div>
+     </div><!-- Contact Info -->
+     <div class="space-y-8 fade-in-right">
+      <div class="bg-white p-6 rounded-xl shadow-lg">
+       <div class="flex items-center mb-4">
+        <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
+         <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+         </svg>
+        </div>
+        <div>
+         <h5 class="text-lg font-semibold text-gray-900">Phone</h5>
+         <p class="text-gray-600">+968 9282 0633</p>
+        </div>
+       </div>
+      </div>
+      <div class="bg-white p-6 rounded-xl shadow-lg">
+       <div class="flex items-center mb-4">
+        <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mr-4">
+         <svg class="w-6 h-6 text-green-600" fill="currentColor" viewbox="0 0 24 24">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488" />
+         </svg>
+        </div>
+        <div>
+         <h5 class="text-lg font-semibold text-gray-900">WhatsApp</h5><a href="https://wa.me/96892820633" target="_blank" rel="noopener noreferrer" class="text-green-600 hover:text-green-700 transition-colors duration-200">Chat with us</a>
+        </div>
+       </div>
+      </div>
+      <div class="bg-white p-6 rounded-xl shadow-lg">
+       <div class="flex items-center mb-4">
+        <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mr-4">
+         <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+         </svg>
+        </div>
+        <div>
+         <h5 class="text-lg font-semibold text-gray-900">Business Hours</h5>
+         <p class="text-gray-600">24/7 Emergency Service</p>
+         <p class="text-gray-600">Regular Hours: 8AM - 6PM</p>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section><!-- Footer -->
+
+  <style id="majan-premium-upgrades">
+    :root { --mc-navy:#071b36; --mc-blue:#1457a6; --mc-sky:#eaf3ff; --mc-ink:#10233e; --mc-muted:#607086; --mc-border:#dce5ef; }
+    html { scroll-behavior:smooth; scroll-padding-top:90px; }
+    body { color:var(--mc-ink); background:#fff; font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
+    header { border-bottom:1px solid #e5edf5; box-shadow:0 6px 24px rgba(7,27,54,.06)!important; }
+    .gradient-bg { background:linear-gradient(100deg,rgba(4,20,43,.96),rgba(9,45,88,.82)),url("https://images.unsplash.com/photo-1621905251918-48416bd8575a?auto=format&fit=crop&w=2000&q=85") center/cover no-repeat!important; }
+    #home { text-align:left; min-height:570px; display:flex; align-items:center; }
+    #home > div.max-w-7xl { width:100%; text-align:left!important; }
+    #home .mb-8.bounce-in { display:none; }
+    #hero-title { max-width:850px; font-size:clamp(2.6rem,5vw,4.7rem)!important; line-height:1.06!important; letter-spacing:-.04em; }
+    #hero-subtitle { max-width:650px!important; margin-left:0!important; color:#e0ebf8; line-height:1.8; }
+    #cta-button { background:#fff!important; color:var(--mc-navy)!important; border-radius:9px!important; }
+    #services, #gallery, #about, #contact { scroll-margin-top:90px; }
+    .service-card { border:1px solid #e5edf5; box-shadow:0 10px 30px rgba(7,27,54,.055)!important; border-radius:16px!important; }
+    .service-card:hover { transform:translateY(-4px); box-shadow:0 18px 38px rgba(7,27,54,.12)!important; }
+    #services-title,#gallery-title,#about h3,#contact h3 { color:var(--mc-navy)!important; letter-spacing:-.025em; }
+    .mc-section { padding:76px 20px; }
+    .mc-wrap { max-width:1160px; margin:0 auto; }
+    .mc-eyebrow { color:#1a65b7; font-weight:800; text-transform:uppercase; letter-spacing:.14em; font-size:.75rem; }
+    .mc-heading { font-size:clamp(2rem,3.5vw,3rem); line-height:1.12; font-weight:800; letter-spacing:-.035em; color:var(--mc-navy); margin:.65rem 0 1rem; }
+    .mc-sub { color:var(--mc-muted); max-width:680px; line-height:1.8; }
+    .mc-btn { display:inline-flex; align-items:center; justify-content:center; gap:.55rem; background:var(--mc-blue); color:#fff; border:1px solid var(--mc-blue); padding:13px 20px; border-radius:9px; font-weight:750; text-decoration:none; cursor:pointer; transition:.2s; }
+    .mc-btn:hover { background:#0b4389; transform:translateY(-1px); }
+    .mc-btn.secondary { background:#fff; color:var(--mc-navy); border-color:#cbd8e8; }
+    .mc-btn.green { background:#16834a; border-color:#16834a; }
+    .mc-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; }
+    .mc-panel { background:#fff; border:1px solid var(--mc-border); border-radius:16px; padding:24px; box-shadow:0 10px 28px rgba(7,27,54,.045); }
+    .mc-field { display:flex; flex-direction:column; gap:7px; color:#263a54; font-weight:650; font-size:.92rem; }
+    .mc-field input,.mc-field select,.mc-field textarea { width:100%; padding:12px 13px; border:1px solid #cbd7e5; border-radius:8px; color:#142944; background:white; outline:none; font:inherit; }
+    .mc-field input:focus,.mc-field select:focus,.mc-field textarea:focus { border-color:#337ac4; box-shadow:0 0 0 3px #d9eaff; }
+    .mc-booking-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+    .mc-review-stars { color:#e4a11b; letter-spacing:2px; font-size:1.1rem; }
+    .mc-review-card { min-height:180px; display:flex; flex-direction:column; }
+    .mc-review-card blockquote { color:#42536a; line-height:1.75; margin:14px 0 20px; }
+    .mc-review-card .mc-review-author { margin-top:auto; font-weight:800; color:var(--mc-navy); }
+    .mc-review-note { background:#f4f8fc; border:1px dashed #c9d7e8; border-radius:12px; padding:22px; color:#52667f; }
+    #mc-admin-launch { border:0; position:fixed; right:16px; bottom:18px; z-index:1001; border-radius:999px; padding:12px 17px; background:var(--mc-navy); color:white; box-shadow:0 8px 25px #071b3640; font-weight:800; cursor:pointer; }
+    #mc-admin-panel { position:fixed; inset:0; z-index:2000; background:#071b36a8; display:none; align-items:center; justify-content:center; padding:16px; }
+    #mc-admin-panel.open { display:flex; }
+    .mc-admin-window { background:#f5f8fc; border-radius:18px; width:min(100%,1000px); max-height:92vh; overflow:auto; box-shadow:0 24px 80px #0004; }
+    .mc-admin-top { background:var(--mc-navy); color:white; padding:20px 24px; display:flex; align-items:center; justify-content:space-between; position:sticky; top:0; z-index:2; }
+    .mc-admin-content { padding:22px; }
+    .mc-admin-tab { border:1px solid #ccd9e8; border-radius:8px; background:#fff; padding:9px 13px; cursor:pointer; font-weight:700; }
+    .mc-admin-tab.active { background:var(--mc-blue); color:white; border-color:var(--mc-blue); }
+    .mc-admin-row { background:#fff; border:1px solid #e0e8f1; border-radius:10px; padding:14px; margin:10px 0; overflow-wrap:anywhere; }
+    .mc-editing [data-editable="true"] { outline:2px dashed #3182ce; outline-offset:3px; cursor:text; }
+    .mc-toast { position:fixed; top:90px; right:18px; z-index:3000; background:#102e50; color:white; padding:12px 16px; border-radius:10px; box-shadow:0 10px 30px #0002; max-width:min(90vw,420px); }
+    .mc-floating-wa { position:fixed; left:18px; bottom:18px; z-index:1000; background:#16834a; color:#fff; padding:13px 16px; border-radius:999px; font-weight:800; text-decoration:none; box-shadow:0 8px 25px #071b3630; }
+    .mc-mobile-bar { display:none; }
+    [dir="rtl"] { text-align:right; }
+    [dir="rtl"] .mc-booking-grid { direction:rtl; }
+    [dir="rtl"] .mc-floating-wa { left:auto; right:18px; }
+    @media(max-width:760px) {
+      #home { min-height:520px; padding-top:70px!important; padding-bottom:70px!important; }
+      .mc-grid { grid-template-columns:1fr; }
+      .mc-booking-grid { grid-template-columns:1fr; }
+      .mc-section { padding:58px 16px; }
+      #mc-admin-launch { bottom:74px; right:12px; }
+      .mc-floating-wa { display:none; }
+      .mc-mobile-bar { display:grid; grid-template-columns:1fr 1fr; position:fixed; bottom:0; left:0; right:0; z-index:999; background:white; padding:8px; gap:8px; box-shadow:0 -5px 20px #071b3615; }
+      .mc-mobile-bar a { text-align:center; padding:12px 8px; border-radius:8px; font-weight:800; text-decoration:none; }
+      .mc-mobile-bar a:first-child { background:var(--mc-navy); color:white; }
+      .mc-mobile-bar a:last-child { background:#e7f7ed; color:#116b3b; }
+      body { padding-bottom:62px; }
+    }
+    @media(prefers-reduced-motion:reduce) { *,*::before,*::after { animation-duration:.01ms!important; transition-duration:.01ms!important; scroll-behavior:auto!important; } }
+  </style>
+  <section id="mc-booking" class="mc-section" style="background:#f4f8fc">
+    <div class="mc-wrap">
+      <div class="mc-eyebrow" data-i18n="bookingEyebrow">SERVICE REQUEST</div>
+      <h2 class="mc-heading" data-i18n="bookingTitle">Book an AC service</h2>
+      <p class="mc-sub" data-i18n="bookingSub">Tell us what you need. Your request will be prepared for WhatsApp so you can send it directly to our team.</p>
+      <div class="mc-grid" style="grid-template-columns:1.05fr .95fr;align-items:start;margin-top:28px">
+        <form id="mc-booking-form" class="mc-panel">
+          <div class="mc-booking-grid">
+            <label class="mc-field"><span data-i18n="fullName">Full name *</span><input name="name" required autocomplete="name" maxlength="100" placeholder="Your name"></label>
+            <label class="mc-field"><span data-i18n="phone">Phone / WhatsApp *</span><input name="phone" required autocomplete="tel" inputmode="tel" maxlength="30" placeholder="+968 ..."></label>
+            <label class="mc-field"><span data-i18n="service">Service needed *</span><select name="service" required><option value="">Choose a service</option><option>AC installation</option><option>AC maintenance</option><option>AC repair</option><option>Duct cleaning</option><option>Commercial cooling</option><option>Emergency service</option><option>Other</option></select></label>
+            <label class="mc-field"><span data-i18n="preferredDate">Preferred date</span><input name="date" type="date" id="mc-booking-date"></label>
+            <label class="mc-field"><span data-i18n="location">Location / area</span><input name="location" maxlength="120" placeholder="City or area"></label>
+            <label class="mc-field"><span data-i18n="preferredTime">Preferred time</span><select name="time"><option value="">Flexible</option><option>Morning</option><option>Afternoon</option><option>Evening</option></select></label>
+            <label class="mc-field" style="grid-column:1/-1"><span data-i18n="details">Describe the issue</span><textarea name="details" rows="3" maxlength="1000" placeholder="Tell us a little about the AC or issue"></textarea></label>
+          </div>
+          <p style="font-size:.82rem;color:#607086;margin:12px 0 16px" data-i18n="privacyNote">Your request is saved in this browser and opened as a WhatsApp message. This static website does not send it to a central server.</p>
+          <button class="mc-btn green" type="submit" style="width:100%" data-i18n="sendBooking">Request service on WhatsApp ↗</button>
+          <p id="mc-booking-feedback" role="status" style="margin-top:12px;color:#116b3b;font-weight:650"></p>
+        </form>
+        <div class="mc-panel" style="background:var(--mc-navy);color:white;padding:30px">
+          <div style="font-size:2rem;margin-bottom:14px">❄</div>
+          <h3 style="font-size:1.5rem;font-weight:800;margin-bottom:12px" data-i18n="bookingSideTitle">Comfort starts with a conversation.</h3>
+          <p style="color:#d7e4f4;line-height:1.8" data-i18n="bookingSideText">Share your service needs and our team can follow up to confirm availability, timing and next steps.</p>
+          <a class="mc-btn" style="background:white;color:var(--mc-navy);border-color:white;margin-top:22px" href="https://wa.me/96892820633" target="_blank" rel="noopener noreferrer" data-i18n="chatWhatsApp">Chat on WhatsApp</a>
+          <div style="border-top:1px solid #ffffff30;margin-top:26px;padding-top:18px;color:#d7e4f4;line-height:1.9">
+            <div>☎ <a href="tel:+96892820633" style="color:white">+968 9282 0633</a></div>
+            <div data-i18n="availabilityNote">Availability is confirmed by the team.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="mc-reviews" class="mc-section">
+    <div class="mc-wrap">
+      <div class="mc-eyebrow" data-i18n="reviewsEyebrow">CUSTOMER FEEDBACK</div>
+      <h2 class="mc-heading" data-i18n="reviewsTitle">Reviews from our customers</h2>
+      <p class="mc-sub" data-i18n="reviewsSub">Customer trust matters. Only genuine feedback should be published here.</p>
+      <div id="mc-review-list" class="mc-grid" style="margin-top:28px"></div>
+      <div id="mc-review-empty" class="mc-review-note" style="margin-top:20px">No customer reviews have been published yet. Use Admin → Reviews to add feedback with the customer's permission.</div>
+    </div>
+  </section>
+  <button id="mc-admin-launch" type="button" aria-label="Open website admin">⚙ Admin</button>
+  <a class="mc-floating-wa" href="https://wa.me/96892820633" target="_blank" rel="noopener noreferrer">☏ WhatsApp</a>
+  <div class="mc-mobile-bar"><a href="#mc-booking">Book service</a><a href="https://wa.me/96892820633" target="_blank" rel="noopener noreferrer">WhatsApp</a></div>
+  <div id="mc-admin-panel" role="dialog" aria-modal="true" aria-labelledby="mc-admin-title">
+    <div class="mc-admin-window">
+      <div class="mc-admin-top"><div><div style="font-size:1.2rem;font-weight:850" id="mc-admin-title">Majan Cooling Admin</div><div style="font-size:.82rem;opacity:.8">Manage content, requests and reviews</div></div><button id="mc-admin-close" aria-label="Close admin" style="font-size:1.8rem;background:transparent;border:0;color:white;cursor:pointer">×</button></div>
+      <div class="mc-admin-content">
+        <div id="mc-admin-login">
+          <h3 style="font-size:1.2rem;font-weight:800;color:#071b36">Admin sign in</h3>
+          <p style="color:#607086;margin:8px 0 16px">First visit? Create a PIN for this browser. This is a convenience gate only; a static website cannot provide secure server-side authentication.</p>
+          <form id="mc-admin-login-form" style="display:flex;gap:10px;flex-wrap:wrap"><input id="mc-admin-pin" type="password" inputmode="numeric" minlength="4" maxlength="32" required placeholder="Enter or create PIN" style="padding:12px;border:1px solid #cbd7e5;border-radius:8px;flex:1;min-width:180px"><button class="mc-btn" type="submit">Continue</button></form>
+          <p id="mc-admin-login-error" role="alert" style="color:#b42318;margin-top:10px"></p>
+        </div>
+        <div id="mc-admin-app" style="display:none">
+          <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px">
+            <button class="mc-admin-tab active" data-tab="overview">Overview</button><button class="mc-admin-tab" data-tab="content">Inline editing</button><button class="mc-admin-tab" data-tab="bookings">Bookings</button><button class="mc-admin-tab" data-tab="reviews">Reviews</button><button class="mc-admin-tab" data-tab="settings">Settings</button>
+          </div>
+          <div id="mc-admin-view"></div>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:20px;border-top:1px solid #dce5ef;padding-top:18px">
+            <button id="mc-admin-logout" class="mc-btn secondary" type="button">Lock dashboard</button><button id="mc-export-data" class="mc-btn secondary" type="button">Export backup JSON</button><button id="mc-import-data" class="mc-btn secondary" type="button">Import backup JSON</button><input type="file" id="mc-import-file" accept="application/json,.json" hidden>
+          </div>
+          <p style="color:#607086;font-size:.8rem;margin-top:12px">Important: content, bookings and reviews are stored only in this browser's local storage. They do not sync across devices or reach a central database.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script id="majan-upgrade-script">
+  (function(){
+    'use strict';
+    const $ = (s, root=document) => root.querySelector(s);
+    const $$ = (s, root=document) => Array.from(root.querySelectorAll(s));
+    const STORE = { bookings:'majan_bookings_v2', reviews:'majan_reviews_v2', content:'majan_content_v2', pin:'majan_admin_pin_v2', contacts:'majan_contacts' };
+    const WHATSAPP = '96892820633';
+    const get = (key, fallback) => { try { const value=localStorage.getItem(key); return value===null?fallback:JSON.parse(value); } catch(e){ return fallback; } };
+    const put = (key, value) => { try { localStorage.setItem(key,JSON.stringify(value)); return true; } catch(e){ toast('Could not save: browser storage may be full.'); return false; } };
+    function toast(message){ let el=$('.mc-toast'); if(!el){el=document.createElement('div');el.className='mc-toast';el.setAttribute('role','status');document.body.appendChild(el);} el.textContent=message; setTimeout(()=>el.remove(),3200); }
+    function safeText(value){ return String(value??'').replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+    const translations = {
+      en:{bookingEyebrow:'SERVICE REQUEST',bookingTitle:'Book an AC service',bookingSub:'Tell us what you need. Your request will be prepared for WhatsApp so you can send it directly to our team.',fullName:'Full name *',phone:'Phone / WhatsApp *',service:'Service needed *',preferredDate:'Preferred date',location:'Location / area',preferredTime:'Preferred time',details:'Describe the issue',privacyNote:'Your request is saved in this browser and opened as a WhatsApp message. This static website does not send it to a central server.',sendBooking:'Request service on WhatsApp ↗',bookingSideTitle:'Comfort starts with a conversation.',bookingSideText:'Share your service needs and our team can follow up to confirm availability, timing and next steps.',chatWhatsApp:'Chat on WhatsApp',availabilityNote:'Availability is confirmed by the team.',reviewsEyebrow:'CUSTOMER FEEDBACK',reviewsTitle:'Reviews from our customers',reviewsSub:'Customer trust matters. Only genuine feedback should be published here.',home:'Home',services:'Services',gallery:'Gallery',about:'About',contact:'Contact'},
+      ar:{bookingEyebrow:'طلب خدمة',bookingTitle:'احجز خدمة تكييف',bookingSub:'أخبرنا بما تحتاج إليه. سنجهز طلبك في رسالة واتساب لتتمكن من إرساله مباشرة إلى فريقنا.',fullName:'الاسم الكامل *',phone:'الهاتف / واتساب *',service:'الخدمة المطلوبة *',preferredDate:'التاريخ المفضل',location:'الموقع / المنطقة',preferredTime:'الوقت المفضل',details:'اشرح المشكلة',privacyNote:'يُحفظ الطلب في هذا المتصفح ويُفتح كرسالة واتساب. هذا الموقع الثابت لا يرسل البيانات إلى خادم مركزي.',sendBooking:'اطلب الخدمة عبر واتساب ↗',bookingSideTitle:'الراحة تبدأ بالتواصل.',bookingSideText:'أخبرنا باحتياجاتك وسيتواصل معك الفريق لتأكيد التوفر والوقت والخطوات التالية.',chatWhatsApp:'تواصل عبر واتساب',availabilityNote:'يؤكد الفريق موعد الخدمة.',reviewsEyebrow:'آراء العملاء',reviewsTitle:'آراء عملائنا',reviewsSub:'ثقة العملاء مهمة. ننشر هنا الآراء الحقيقية فقط.',home:'الرئيسية',services:'الخدمات',gallery:'معرض الأعمال',about:'من نحن',contact:'اتصل بنا'}
+    };
+    let lang='en', editing=false;
+    function setLanguage(next){
+      lang=next; document.documentElement.lang=lang; document.documentElement.dir=lang==='ar'?'rtl':'ltr';
+      $$('[data-i18n]').forEach(el=>{const k=el.dataset.i18n;if(translations[lang][k])el.textContent=translations[lang][k];});
+      const btn=$('#mc-language-toggle'); if(btn)btn.textContent=lang==='en'?'العربية':'English';
+      const navTexts=translations[lang]; const navLinks=$$('header nav a');
+      navLinks.forEach(a=>{const key=(a.getAttribute('href')||'').replace('#','');if(navTexts[key])a.textContent=navTexts[key];});
+    }
+    function addLanguageToggle(){
+      const host=$('header nav .flex.justify-between.items-center'); if(!host||$('#mc-language-toggle'))return;
+      const btn=document.createElement('button');btn.id='mc-language-toggle';btn.className='mc-btn secondary';btn.style.padding='8px 12px';btn.style.fontSize='.85rem';btn.type='button';btn.textContent='العربية';btn.setAttribute('aria-label','Switch language');btn.onclick=()=>setLanguage(lang==='en'?'ar':'en');
+      const target=$('header nav .hidden.md\\:flex'); if(target){target.insertBefore(btn,target.firstChild);}else host.appendChild(btn);
+      setLanguage(lang);
+    }
+    function addSectionsAndLinks(){
+      // Put booking directly after hero; keep the existing service, gallery, about and contact sections intact.
+      const hero=$('#home'); const booking=$('#mc-booking'); if(hero&&booking&&booking.previousElementSibling!==hero)hero.insertAdjacentElement('afterend',booking);
+      const services=$('#services'); const reviews=$('#mc-reviews'); if(services&&reviews&&reviews.previousElementSibling!==services)services.insertAdjacentElement('afterend',reviews);
+      const desktop=$('header nav .hidden.md\\:flex');
+      if(desktop&&!$('a[href="#mc-booking"]',desktop)){const a=document.createElement('a');a.href='#mc-booking';a.className='nav-link nav-item-stagger text-gray-700 hover:text-blue-600 font-medium';a.textContent='Book service';desktop.insertBefore(a,desktop.lastElementChild);}
+      const mobile=$('#mobile-menu .px-2');if(mobile&&!$('a[href="#mc-booking"]',mobile)){const a=document.createElement('a');a.href='#mc-booking';a.className='mobile-nav-link mobile-nav-item block px-3 py-2 text-gray-700 hover:text-blue-600 font-medium';a.textContent='Book service';mobile.insertBefore(a,mobile.lastElementChild);}
+      const cta=$('#cta-button');if(cta)cta.onclick=()=>$('#mc-booking').scrollIntoView({behavior:'smooth'});
+      const indicator=$('#storage-indicator');if(indicator){indicator.title='Data is stored in this browser only';const label=$('#storage-mode');if(label)label.textContent='Browser-only storage';}
+    }
+    function markEditable(){
+      const ids=['company-name','tagline','hero-title','hero-subtitle','services-title','gallery-title'];
+      ids.forEach(id=>{const el=$('#'+id);if(el){el.dataset.editable='true';el.dataset.editKey=id;}});
+      ['#about h3','#contact h3','#about p','#contact p','footer p'].forEach(sel=>{$$(sel).forEach((el,i)=>{if(!el.closest('#mc-admin-panel')){el.dataset.editable='true';el.dataset.editKey=el.id||`${sel.replace(/[^a-z0-9]/gi,'_')}_${i}`;}});});
+      const saved=get(STORE.content,{});
+      $$('[data-edit-key]').forEach(el=>{const key=el.dataset.editKey;if(Object.prototype.hasOwnProperty.call(saved,key))el.innerHTML=saved[key];});
+    }
+    function toggleEditing(on){
+      editing=on;document.body.classList.toggle('mc-editing',on);
+      $$('[data-editable="true"]').forEach(el=>{el.contentEditable=on?'true':'false';el.spellcheck=on;});
+      const b=$('#mc-save-content');if(b)b.textContent=on?'Save edited content':'Enable inline editing';
+      if(on)toast('Click any outlined text on the page to edit it, then choose Save edited content.');
+    }
+    function saveEditedContent(){
+      const data={};$$('[data-editable="true"]').forEach(el=>{const key=el.dataset.editKey||el.id;if(key)data[key]=el.innerHTML;});
+      put(STORE.content,data);toggleEditing(false);toast('Text edits saved in this browser.');
+    }
+    function renderReviews(){
+      const list=$('#mc-review-list'),empty=$('#mc-review-empty');if(!list)return;
+      const reviews=get(STORE.reviews,[]).filter(r=>r&&r.published);
+      list.innerHTML=reviews.map(r=>`<article class="mc-panel mc-review-card"><div class="mc-review-stars" aria-label="${Number(r.rating)||5} out of 5 stars">${'★'.repeat(Math.max(1,Math.min(5,Number(r.rating)||5)))}${'☆'.repeat(5-Math.max(1,Math.min(5,Number(r.rating)||5)))}</div><blockquote>“${safeText(r.text)}”</blockquote><div class="mc-review-author">${safeText(r.name)}</div>${r.service?`<div style="font-size:.84rem;color:#718096;margin-top:4px">${safeText(r.service)}</div>`:''}</article>`).join('');
+      if(empty)empty.style.display=reviews.length?'none':'block';
+    }
+    function renderOverview(){
+      const bookings=get(STORE.bookings,[]),contacts=get(STORE.contacts,[]);
+      return `<div class="mc-grid"><div class="mc-panel"><div style="color:#607086">Service requests</div><div style="font-size:2rem;font-weight:850;color:#071b36">${bookings.length}</div></div><div class="mc-panel"><div style="color:#607086">Existing enquiries</div><div style="font-size:2rem;font-weight:850;color:#071b36">${contacts.length}</div></div><div class="mc-panel"><div style="color:#607086">Published reviews</div><div style="font-size:2rem;font-weight:850;color:#071b36">${get(STORE.reviews,[]).filter(r=>r.published).length}</div></div></div><div class="mc-panel" style="margin-top:16px"><h3 style="font-weight:850;font-size:1.1rem">Quick actions</h3><p style="color:#607086;margin:8px 0 16px">Edit page text, review requests, or add customer feedback.</p><button class="mc-btn" data-action="go-content">Edit website text</button> <button class="mc-btn secondary" data-action="go-bookings">View bookings</button> <button class="mc-btn secondary" data-action="go-gallery">Manage gallery photos</button></div>`;
+    }
+    function renderBookings(){
+      const bookings=get(STORE.bookings,[]);
+      if(!bookings.length)return '<div class="mc-panel">No bookings saved in this browser yet.</div>';
+      return `<div><div style="display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap"><h3 style="font-weight:850;font-size:1.15rem">Service requests</h3><button class="mc-btn secondary" data-action="clear-bookings">Clear all requests</button></div>${bookings.slice().reverse().map(b=>`<article class="mc-admin-row"><div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap"><strong>${safeText(b.name)} — ${safeText(b.service)}</strong><small>${safeText(new Date(b.createdAt).toLocaleString())}</small></div><p style="margin:7px 0;color:#52667f">☎ ${safeText(b.phone)} · ${safeText(b.date||'No date')} · ${safeText(b.time||'Flexible')}</p><p style="color:#52667f">${safeText(b.location||'Location not supplied')}</p><p style="margin:7px 0">${safeText(b.details||'No extra details')}</p><button class="mc-btn green" data-action="whatsapp-booking" data-id="${safeText(b.id)}">Open WhatsApp</button> <button class="mc-btn secondary" data-action="delete-booking" data-id="${safeText(b.id)}">Delete</button></article>`).join('')}</div>`;
+    }
+    function renderReviewsAdmin(){
+      const reviews=get(STORE.reviews,[]);
+      return `<div class="mc-panel"><h3 style="font-weight:850;font-size:1.15rem;margin-bottom:14px">Add customer review</h3><form id="mc-review-form" class="mc-booking-grid"><label class="mc-field">Customer name *<input name="name" required maxlength="100"></label><label class="mc-field">Rating *<select name="rating"><option value="5">5 stars</option><option value="4">4 stars</option><option value="3">3 stars</option><option value="2">2 stars</option><option value="1">1 star</option></select></label><label class="mc-field" style="grid-column:1/-1">Review text *<textarea name="text" required rows="3" maxlength="800"></textarea></label><label class="mc-field" style="grid-column:1/-1">Service (optional)<input name="service" maxlength="100" placeholder="e.g. AC maintenance"></label><label style="grid-column:1/-1;display:flex;gap:8px;align-items:center"><input type="checkbox" name="published" checked> Publish on website (only with customer permission)</label><button class="mc-btn" type="submit">Save review</button></form></div>${reviews.map(r=>`<div class="mc-admin-row"><strong>${safeText(r.name)}</strong> · ${r.rating}/5 · ${r.published?'Published':'Draft'}<p style="margin:8px 0">${safeText(r.text)}</p><button class="mc-btn secondary" data-action="toggle-review" data-id="${safeText(r.id)}">${r.published?'Unpublish':'Publish'}</button> <button class="mc-btn secondary" data-action="delete-review" data-id="${safeText(r.id)}">Delete</button></div>`).join('')}`;
+    }
+    function renderSettings(){
+      return `<div class="mc-panel"><h3 style="font-weight:850;font-size:1.15rem;margin-bottom:10px">Website settings</h3><p style="color:#607086;line-height:1.7;margin-bottom:16px">WhatsApp destination is currently +968 9282 0633. Change the number below if required. Enter digits only, including country code.</p><form id="mc-settings-form" style="display:flex;gap:10px;flex-wrap:wrap"><label class="mc-field" style="flex:1;min-width:220px">WhatsApp number<input name="whatsapp" value="${safeText(get('majan_whatsapp_number',WHATSAPP))}" pattern="[0-9]{8,15}" required></label><button class="mc-btn" type="submit">Save number</button></form><p style="font-size:.83rem;color:#607086;margin-top:18px">This is a static HTML website. For shared admin access, secure accounts and central booking storage, connect a backend/database before publishing sensitive customer information.</p></div>`;
+    }
+    function showTab(tab){
+      $$('.mc-admin-tab').forEach(b=>b.classList.toggle('active',b.dataset.tab===tab));
+      const view=$('#mc-admin-view');if(!view)return;
+      view.innerHTML=tab==='overview'?renderOverview():tab==='content'?`<div class="mc-panel"><h3 style="font-weight:850;font-size:1.15rem">Inline page editor</h3><p style="color:#607086;line-height:1.7;margin:8px 0 16px">Turn editing on, click the outlined text on the live page, make your changes, then save. Changes are stored on this browser only.</p><button id="mc-save-content" class="mc-btn" type="button">Enable inline editing</button> <button id="mc-reset-content" class="mc-btn secondary" type="button">Reset saved text</button></div>`:tab==='bookings'?renderBookings():tab==='reviews'?renderReviewsAdmin():renderSettings();
+      view.dataset.tab=tab;
+      const editBtn=$('#mc-save-content');if(editBtn)editBtn.onclick=()=>editing?saveEditedContent():toggleEditing(true);
+      const reset=$('#mc-reset-content');if(reset)reset.onclick=()=>{localStorage.removeItem(STORE.content);location.reload();};
+    }
+    function openAdmin(){ $('#mc-admin-panel').classList.add('open');$('#mc-admin-pin').focus(); }
+    function closeAdmin(){ $('#mc-admin-panel').classList.remove('open');toggleEditing(false); }
+    function unlockAdmin(){
+      isAdminMode = true;
+      if (typeof showAdminControls === 'function') showAdminControls();
+      $('#mc-admin-login').style.display='none';$('#mc-admin-app').style.display='block';showTab('overview');
+      toast('Dashboard unlocked. Gallery tools are available in the Gallery section.');
+    }
+    function bookingText(b){return `Majan Cooling — Service Request\nName: ${b.name}\nPhone: ${b.phone}\nService: ${b.service}\nPreferred date: ${b.date||'Flexible'}\nPreferred time: ${b.time||'Flexible'}\nLocation: ${b.location||'Not provided'}\nDetails: ${b.details||'Not provided'}`;}
+    function waUrl(message){return `https://wa.me/${get('majan_whatsapp_number',WHATSAPP)}?text=${encodeURIComponent(message)}`;}
+    function downloadJSON(){
+      const payload={version:2,exportedAt:new Date().toISOString(),bookings:get(STORE.bookings,[]),reviews:get(STORE.reviews,[]),content:get(STORE.content,{}),contacts:get(STORE.contacts,[]),photos:get('majan_photos',[])};
+      const blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='majan-cooling-backup.json';a.click();URL.revokeObjectURL(url);
+    }
+    function importJSON(file){
+      const reader=new FileReader();reader.onload=()=>{try{const d=JSON.parse(reader.result);if(d.bookings)put(STORE.bookings,d.bookings);if(d.reviews)put(STORE.reviews,d.reviews);if(d.content)put(STORE.content,d.content);if(d.contacts)put(STORE.contacts,d.contacts);if(d.photos)put('majan_photos',d.photos);renderReviews();toast('Backup imported. Reload to refresh existing gallery and text.');}catch(e){toast('Invalid JSON backup file.');}};reader.readAsText(file);
+    }
+    document.addEventListener('DOMContentLoaded',()=>{
+      addSectionsAndLinks();addLanguageToggle();markEditable();renderReviews();
+      const date=$('#mc-booking-date');if(date){const now=new Date();date.min=`${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,'0')}-${String(now.getDate()).padStart(2,'0')}`;}
+      $('#mc-booking-form').addEventListener('submit',e=>{
+        e.preventDefault();const fd=new FormData(e.currentTarget);const b={id:`b_${Date.now()}_${Math.random().toString(36).slice(2,7)}`,name:String(fd.get('name')).trim(),phone:String(fd.get('phone')).trim(),service:String(fd.get('service')),date:String(fd.get('date')||''),time:String(fd.get('time')||''),location:String(fd.get('location')||'').trim(),details:String(fd.get('details')||'').trim(),createdAt:new Date().toISOString()};
+        if(!b.name||!b.phone||!b.service)return;
+        const list=get(STORE.bookings,[]);list.push(b);put(STORE.bookings,list);
+        $('#mc-booking-feedback').textContent=lang==='ar'?'تم حفظ الطلب في هذا المتصفح. افتح واتساب لإرسال الطلب إلى الفريق.':'Request saved in this browser. WhatsApp will open so you can send it to the team.';
+        window.open(waUrl(bookingText(b)),'_blank','noopener');
+        e.currentTarget.reset();if(date)date.min=date.min;
+      });
+      $('#mc-admin-launch').addEventListener('click',openAdmin);
+      $('#mc-admin-close').addEventListener('click',closeAdmin);
+      $('#mc-admin-panel').addEventListener('click',e=>{if(e.target.id==='mc-admin-panel')closeAdmin();});
+      $('#mc-admin-login-form').addEventListener('submit',e=>{
+        e.preventDefault();const pin=$('#mc-admin-pin').value;const existing=localStorage.getItem(STORE.pin);
+        if(!existing){if(pin.length<4){$('#mc-admin-login-error').textContent='Use at least 4 characters.';return;}localStorage.setItem(STORE.pin,pin);unlockAdmin();toast('PIN created for this browser.');}
+        else if(pin===existing){$('#mc-admin-login-error').textContent='';unlockAdmin();}
+        else $('#mc-admin-login-error').textContent='Incorrect PIN. Try again.';
+        $('#mc-admin-pin').value='';
+      });
+      $$('.mc-admin-tab').forEach(b=>b.addEventListener('click',()=>showTab(b.dataset.tab)));
+      $('#mc-admin-logout').addEventListener('click',()=>{isAdminMode=false;toggleEditing(false);$('#mc-admin-app').style.display='none';$('#mc-admin-login').style.display='block';$('#mc-admin-pin').value='';closeAdmin();});
+      $('#mc-export-data').addEventListener('click',downloadJSON);
+      $('#mc-import-data').addEventListener('click',()=>$('#mc-import-file').click());
+      $('#mc-import-file').addEventListener('change',e=>{if(e.target.files[0])importJSON(e.target.files[0]);});
+      $('#mc-admin-view').addEventListener('submit',e=>{
+        if(e.target.id==='mc-review-form'){e.preventDefault();const fd=new FormData(e.target);const list=get(STORE.reviews,[]);list.push({id:`r_${Date.now()}`,name:String(fd.get('name')).trim(),rating:Number(fd.get('rating'))||5,text:String(fd.get('text')).trim(),service:String(fd.get('service')||'').trim(),published:fd.get('published')==='on',createdAt:new Date().toISOString()});put(STORE.reviews,list);renderReviews();showTab('reviews');toast('Review saved.');}
+        if(e.target.id==='mc-settings-form'){e.preventDefault();const fd=new FormData(e.target);const num=String(fd.get('whatsapp')).replace(/\D/g,'');if(num.length<8||num.length>15){toast('Enter a valid international number.');return;}localStorage.setItem('majan_whatsapp_number',num);$$('a[href*="wa.me/"]').forEach(a=>a.href=`https://wa.me/${num}`);toast('WhatsApp number updated in this browser.');}
+      });
+      $('#mc-admin-view').addEventListener('click',e=>{
+        const b=e.target.closest('[data-action]');if(!b)return;const action=b.dataset.action,id=b.dataset.id;
+        if(action==='go-content')showTab('content');if(action==='go-bookings')showTab('bookings');if(action==='go-gallery'){closeAdmin();$('#gallery').scrollIntoView({behavior:'smooth'});}
+        if(action==='clear-bookings'&&confirm('Delete all saved bookings from this browser?')){put(STORE.bookings,[]);showTab('bookings');}
+        if(action==='delete-booking'&&confirm('Delete this booking?')){put(STORE.bookings,get(STORE.bookings,[]).filter(x=>x.id!==id));showTab('bookings');}
+        if(action==='whatsapp-booking'){const booking=get(STORE.bookings,[]).find(x=>x.id===id);if(booking)window.open(waUrl(bookingText(booking)),'_blank','noopener');}
+        if(action==='toggle-review'){const list=get(STORE.reviews,[]).map(r=>r.id===id?{...r,published:!r.published}:r);put(STORE.reviews,list);renderReviews();showTab('reviews');}
+        if(action==='delete-review'&&confirm('Delete this review?')){put(STORE.reviews,get(STORE.reviews,[]).filter(r=>r.id!==id));renderReviews();showTab('reviews');}
+      });
+      // Support the old URL parameter without allowing it to bypass the new dashboard PIN.
+      if(new URLSearchParams(location.search).get('admin')==='true'){openAdmin();history.replaceState({},document.title,location.pathname+location.hash);}
+    });
+  })();
+  </script>
+
+  <footer class="bg-gray-900 text-white py-12">
+   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid md:grid-cols-3 gap-8">
+     <div>
+      <div class="flex items-center mb-4">
+       <img src="https://lh3.googleusercontent.com/sitesv/AAzXCkf86__dnEPPG5R2RzIMp1che46eJ8Uvwm1oqqKAuQm1JLt851xxRl9Eb7WGaqYhS9Q6cuXmKKl6AyH-Hf5hcuLB5SrashWVwB1deLfHt2jN71isJ1JmrzooT6NNNTGO7vp615djBHYLDRObmgmeeX8s0sh_sV2R0z8Ne7H9m99A7Mj0bZVVEA3VGYk=w16383" alt="Majan Cooling Logo" class="w-8 h-8 object-contain mr-3" onerror="this.src=''; this.alt='Logo failed to load'; this.style.display='none';">
+       <h4 class="text-xl font-bold">Majan Cooling</h4>
+      </div>
+      <p class="text-gray-400 mb-4">Professional air conditioning services for residential and commercial properties throughout Oman and the UAE.</p>
+     </div>
+     <div>
+      <h5 class="text-lg font-semibold mb-4">Services</h5>
+      <ul class="space-y-2 text-gray-400">
+       <li><a href="#services" class="hover:text-white transition-colors duration-200">AC Installation</a></li>
+       <li><a href="#services" class="hover:text-white transition-colors duration-200">Maintenance</a></li>
+       <li><a href="#services" class="hover:text-white transition-colors duration-200">Repair Services</a></li>
+       <li><a href="#services" class="hover:text-white transition-colors duration-200">Emergency Service</a></li>
+      </ul>
+     </div>
+     <div>
+      <h5 class="text-lg font-semibold mb-4">Contact Info</h5>
+      <div class="space-y-2 text-gray-400">
+       <p>Phone: +968 9282 0633</p>
+       <p>Available 24/7 for emergencies</p><a href="https://wa.me/96892820633" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-green-400 hover:text-green-300 transition-colors duration-200">
+        <svg class="w-4 h-4 mr-2" fill="currentColor" viewbox="0 0 24 24">
+         <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488" />
+        </svg> WhatsApp Us </a>
+      </div>
+     </div>
+    </div>
+    <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+     <p>© 2026 Majan Cooling. All rights reserved. Professional AC services in Oman and the UAE.</p>
+    </div>
+   </div>
+  </footer>
+  <script>
+    // Global variables for gallery
+    let allPhotos = [];
+    let currentFilter = 'all';
+    let currentPhotoForDeletion = null;
+    let isAdminMode = false;
+
+    // GitHub/Browser Storage System
+    const GitHubStorage = {
+      // Use localStorage as fallback when Canva SDK is not available
+      save: function(key, data) {
+        try {
+          const existing = JSON.parse(localStorage.getItem(key) || '[]');
+          existing.push(data);
+          localStorage.setItem(key, JSON.stringify(existing));
+          return { success: true };
+        } catch (error) {
+          console.error('Storage error:', error);
+          return { success: false, error };
+        }
+      },
+      
+      load: function(key) {
+        try {
+          return JSON.parse(localStorage.getItem(key) || '[]');
+        } catch (error) {
+          console.error('Load error:', error);
+          return [];
+        }
+      },
+      
+      delete: function(key, id) {
+        try {
+          const existing = JSON.parse(localStorage.getItem(key) || '[]');
+          const filtered = existing.filter(item => item.id !== id);
+          localStorage.setItem(key, JSON.stringify(filtered));
+          return { success: true };
+        } catch (error) {
+          console.error('Delete error:', error);
+          return { success: false, error };
+        }
+      }
+    };
+
+    // Universal Storage Manager - works with both Canva SDK and GitHub
+    const StorageManager = {
+      isCanvaMode: false,
+      
+      async init() {
+        // Check if we're in Canva environment
+        this.isCanvaMode = false; // Always false for GitHub deployment
+        
+        console.log('🐙 Running in GitHub mode with localStorage');
+        // Load existing data from localStorage
+        this.loadFromLocalStorage();
+        this.updateStorageIndicator('🐙 Browser Storage');
+        return true;
+      },
+      
+      updateStorageIndicator(mode) {
+        const indicator = document.getElementById('storage-mode');
+        const storageLocation = document.getElementById('storage-location');
+        if (indicator) indicator.textContent = mode;
+        if (storageLocation) storageLocation.textContent = 'Browser Storage';
+      },
+      
+      loadFromLocalStorage() {
+        const contacts = GitHubStorage.load('majan_contacts');
+        const photos = GitHubStorage.load('majan_photos');
+        
+        // Simulate onDataChanged call
+        const allData = [...contacts, ...photos];
+        dataHandler.onDataChanged(allData);
+      },
+      
+      async create(data) {
+        // GitHub mode - use localStorage
+        const key = data.type === 'photo' ? 'majan_photos' : 'majan_contacts';
+        const result = GitHubStorage.save(key, data);
+        
+        if (result.success) {
+          // Refresh data display
+          this.loadFromLocalStorage();
+          return { isOk: true };
+        } else {
+          return { isOk: false, error: result.error };
+        }
+      },
+      
+      async delete(data) {
+        // GitHub mode - use localStorage
+        const key = data.type === 'photo' ? 'majan_photos' : 'majan_contacts';
+        const result = GitHubStorage.delete(key, data.id);
+        
+        if (result.success) {
+          // Refresh data display
+          this.loadFromLocalStorage();
+          return { isOk: true };
+        } else {
+          return { isOk: false, error: result.error };
+        }
+      }
+    };
+
+    // Data handler for both contact forms and gallery photos
+    const dataHandler = {
+      onDataChanged(data) {
+        // Separate contact messages and photos
+        const contactMessages = data.filter(item => item.type === 'contact' || !item.type);
+        const photos = data.filter(item => item.type === 'photo');
+        
+        // Update message count display
+        const messageCountElement = document.getElementById('message-count');
+        if (messageCountElement) {
+          messageCountElement.textContent = contactMessages.length;
+        }
+        
+        // Update gallery
+        allPhotos = photos;
+        updateGalleryStats();
+        renderGallery();
+        
+        // Show storage mode indicator
+        console.log(`📊 Storage: Browser Storage | Messages: ${contactMessages.length} | Photos: ${photos.length}`);
+      }
+    };
+
+    // Admin access control - check for admin mode
+    function checkAdminAccess() { /* Admin access is handled by the PIN-gated dashboard added below. */ }
+    
+    // Add logout button for admin mode
+    function addAdminLogoutButton() {
+      const adminPhotoSection = document.getElementById('admin-photo-section');
+      if (!adminPhotoSection) return;
+      
+      // Check if logout button already exists
+      if (document.getElementById('admin-logout-btn')) return;
+      
+      const logoutBtn = document.createElement('button');
+      logoutBtn.id = 'admin-logout-btn';
+      logoutBtn.className = 'mb-4 bg-orange-600 hover:bg-orange-700 text-white font-semibold py-2 px-4 rounded-lg transition-all duration-200';
+      logoutBtn.textContent = '🚪 Logout from Admin Mode';
+      logoutBtn.onclick = function(e) {
+        e.preventDefault();
+        // Remove admin parameter from URL without reloading
+        window.history.replaceState({}, document.title, window.location.pathname);
+        // Reload page without admin mode
+        location.reload();
+      };
+      
+      adminPhotoSection.parentElement.insertBefore(logoutBtn, adminPhotoSection);
+    }
+
+    function showAdminControls() {
+      // Show admin sections
+      const adminPhotoSection = document.getElementById('admin-photo-section');
+      const adminDeleteSection = document.getElementById('admin-delete-section');
+      const adminMessageInfo = document.getElementById('admin-message-info');
+      
+      if (adminPhotoSection) adminPhotoSection.style.display = 'block';
+      if (adminDeleteSection) adminDeleteSection.style.display = 'flex';
+      if (adminMessageInfo) adminMessageInfo.style.display = 'block';
+    }
+
+    // Gallery Functions
+    function updateGalleryStats() {
+      const totalPhotos = allPhotos.length;
+      const installationCount = allPhotos.filter(p => p.photo_category === 'installation').length;
+      const maintenanceCount = allPhotos.filter(p => p.photo_category === 'maintenance').length;
+      const repairCount = allPhotos.filter(p => p.photo_category === 'repair').length;
+
+      const totalElement = document.getElementById('total-photos');
+      const installationElement = document.getElementById('installation-count');
+      const maintenanceElement = document.getElementById('maintenance-count');
+      const repairElement = document.getElementById('repair-count');
+
+      if (totalElement) totalElement.textContent = totalPhotos;
+      if (installationElement) installationElement.textContent = installationCount;
+      if (maintenanceElement) maintenanceElement.textContent = maintenanceCount;
+      if (repairElement) repairElement.textContent = repairCount;
+    }
+
+    function renderGallery() {
+      const galleryGrid = document.getElementById('gallery-grid');
+      const noPhotos = document.getElementById('no-photos');
+      
+      if (!galleryGrid || !noPhotos) return;
+      
+      // Filter photos based on current filter
+      const filteredPhotos = currentFilter === 'all' 
+        ? allPhotos 
+        : allPhotos.filter(photo => photo.photo_category === currentFilter);
+
+      // Clear existing photos (except no-photos message)
+      const existingPhotos = galleryGrid.querySelectorAll('.photo-card');
+      existingPhotos.forEach(photo => photo.remove());
+
+      if (filteredPhotos.length === 0) {
+        noPhotos.style.display = 'block';
+      } else {
+        noPhotos.style.display = 'none';
+        
+        filteredPhotos.forEach(photo => {
+          const photoCard = createPhotoCard(photo);
+          galleryGrid.appendChild(photoCard);
+        });
+      }
+    }
+
+    function createPhotoCard(photo) {
+      const card = document.createElement('div');
+      card.className = 'photo-card bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 cursor-pointer transform hover:scale-105';
+      card.dataset.photoId = photo.id;
+      
+      const date = new Date(photo.created_at);
+      const formattedDate = date.toLocaleDateString();
+      
+      card.innerHTML = `
+        <div class="aspect-w-4 aspect-h-3 relative">
+          <img src="${photo.photo_url}" alt="${photo.photo_title}" 
+               class="w-full h-48 object-cover"
+               onerror="this.src=''; this.alt='Image failed to load'; this.parentElement.innerHTML='<div class=\\'w-full h-48 bg-gray-200 flex items-center justify-center text-gray-500\\'>Image not available</div>';">
+          <div class="absolute top-2 right-2">
+            <span class="bg-blue-600 text-white px-2 py-1 rounded-full text-xs font-medium capitalize">
+              ${photo.photo_category}
+            </span>
+          </div>
+        </div>
+        <div class="p-4">
+          <h4 class="font-semibold text-gray-900 mb-2 line-clamp-2">${photo.photo_title}</h4>
+          <p class="text-gray-600 text-sm mb-2 line-clamp-2">${photo.photo_description || 'No description'}</p>
+          <div class="flex justify-between items-center text-xs text-gray-500">
+            <span>${photo.photo_location || 'Location not specified'}</span>
+            <span>${formattedDate}</span>
+          </div>
+        </div>
+      `;
+      
+      card.addEventListener('click', () => openPhotoModal(photo));
+      return card;
+    }
+
+    function openPhotoModal(photo) {
+      const modal = document.getElementById('photo-modal');
+      const modalTitle = document.getElementById('modal-title');
+      const modalCategory = document.getElementById('modal-category');
+      const modalImage = document.getElementById('modal-image');
+      const modalDescription = document.getElementById('modal-description');
+      const modalLocation = document.getElementById('modal-location');
+      const modalDate = document.getElementById('modal-date');
+      
+      if (!modal || !modalTitle || !modalCategory || !modalImage || !modalDescription || !modalLocation || !modalDate) return;
+      
+      modalTitle.textContent = photo.photo_title;
+      modalCategory.textContent = photo.photo_category.charAt(0).toUpperCase() + photo.photo_category.slice(1);
+      modalImage.src = photo.photo_url;
+      modalImage.alt = photo.photo_title;
+      modalDescription.textContent = photo.photo_description || 'No description available';
+      modalLocation.textContent = photo.photo_location ? `📍 ${photo.photo_location}` : '';
+      modalDate.textContent = `Added: ${new Date(photo.created_at).toLocaleDateString()}`;
+      
+      currentPhotoForDeletion = photo;
+      modal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closePhotoModal() {
+      const modal = document.getElementById('photo-modal');
+      if (modal) {
+        modal.classList.add('hidden');
+        document.body.style.overflow = 'auto';
+        currentPhotoForDeletion = null;
+      }
+    }
+
+    // Initialize everything when page loads
+    document.addEventListener('DOMContentLoaded', async function() {
+      // Check admin access first
+      checkAdminAccess();
+      
+      // Initialize Universal Storage System
+      await StorageManager.init();
+
+      // Mobile menu functionality
+      const mobileMenuButton = document.getElementById('mobile-menu-button');
+      const mobileMenu = document.getElementById('mobile-menu');
+      
+      if (mobileMenuButton && mobileMenu) {
+        mobileMenuButton.addEventListener('click', function() {
+          const isHidden = mobileMenu.classList.contains('hidden');
+          
+          if (isHidden) {
+            mobileMenu.classList.remove('hidden');
+            mobileMenu.classList.add('show');
+            mobileMenuButton.classList.add('hamburger-active');
+            
+            // Animate mobile nav items
+            const mobileNavItems = mobileMenu.querySelectorAll('.mobile-nav-item');
+            mobileNavItems.forEach((item, index) => {
+              setTimeout(() => {
+                item.classList.add('show');
+              }, index * 100);
+            });
+          } else {
+            mobileMenu.classList.add('hidden');
+            mobileMenu.classList.remove('show');
+            mobileMenuButton.classList.remove('hamburger-active');
+            
+            const mobileNavItems = mobileMenu.querySelectorAll('.mobile-nav-item');
+            mobileNavItems.forEach(item => {
+              item.classList.remove('show');
+            });
+          }
+        });
+      }
+
+      // Smooth scrolling for navigation links
+      const navLinks = document.querySelectorAll('a[href^="#"]');
+      navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          const targetId = this.getAttribute('href');
+          const targetSection = document.querySelector(targetId);
+          
+          if (targetSection) {
+            targetSection.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+            
+            // Close mobile menu if open
+            if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+              mobileMenu.classList.add('hidden');
+              mobileMenu.classList.remove('show');
+              if (mobileMenuButton) mobileMenuButton.classList.remove('hamburger-active');
+            }
+          }
+        });
+      });
+
+      // Contact form submission
+      const contactForm = document.getElementById('contact-form');
+      const submitBtn = document.getElementById('submit-btn');
+      const submitText = document.getElementById('submit-text');
+      const submitLoading = document.getElementById('submit-loading');
+      const formMessage = document.getElementById('form-message');
+
+      if (contactForm) {
+        contactForm.addEventListener('submit', async function(e) {
+          e.preventDefault();
+          
+          // Show loading state
+          if (submitText) submitText.classList.add('hidden');
+          if (submitLoading) submitLoading.classList.remove('hidden');
+          if (submitBtn) submitBtn.disabled = true;
+          
+          // Get form data
+          const formData = new FormData(contactForm);
+          const name = formData.get('name');
+          const phone = formData.get('phone');
+          const service = formData.get('service');
+          const message = formData.get('message');
+          
+          const contactData = {
+            id: Date.now().toString(),
+            type: 'contact',
+            name: name,
+            phone: phone,
+            service: service,
+            message: message,
+            created_at: new Date().toISOString()
+          };
+          
+          try {
+            // Save using Universal Storage Manager
+            const result = await StorageManager.create(contactData);
+            
+            if (result.isOk) {
+              // Send to WhatsApp
+              const whatsappMessage = `New Contact Form Inquiry\n\n👤 Name: ${name}\n📞 Phone: ${phone}\n🔧 Service: ${service}\n💬 Message: ${message}`;
+              const whatsappUrl = `https://wa.me/96892820633?text=${encodeURIComponent(whatsappMessage)}`;
+              
+              // Open WhatsApp in new window (notification will be received on your phone)
+              window.open(whatsappUrl, '_blank', 'width=600,height=400');
+              
+              // Show success message
+              if (formMessage) {
+                formMessage.className = 'mt-4 p-4 rounded-lg bg-green-50 border border-green-200 text-green-800';
+                formMessage.textContent = '✅ Message sent successfully! We\'ve received your inquiry and will WhatsApp you shortly at ' + phone + '.';
+                formMessage.classList.remove('hidden');
+              }
+              
+              // Reset form
+              contactForm.reset();
+            } else {
+              throw new Error('Failed to save contact information');
+            }
+          } catch (error) {
+            // Show error message
+            if (formMessage) {
+              formMessage.className = 'mt-4 p-4 rounded-lg bg-red-50 border border-red-200 text-red-800';
+              formMessage.textContent = 'Sorry, there was an error. Please try calling us directly at +968 9282 0633 or WhatsApp us.';
+              formMessage.classList.remove('hidden');
+            }
+          } finally {
+            // Reset button state
+            if (submitText) submitText.classList.remove('hidden');
+            if (submitLoading) submitLoading.classList.add('hidden');
+            if (submitBtn) submitBtn.disabled = false;
+            
+            // Hide message after 5 seconds
+            setTimeout(() => {
+              if (formMessage) formMessage.classList.add('hidden');
+            }, 5000);
+          }
+        });
+      }
+
+      // Photo form submission (Admin only)
+      const photoForm = document.getElementById('photo-form');
+      const addPhotoBtn = document.getElementById('add-photo-btn');
+      const addPhotoText = document.getElementById('add-photo-text');
+      const addPhotoLoading = document.getElementById('add-photo-loading');
+      const photoFormMessage = document.getElementById('photo-form-message');
+
+      if (photoForm) {
+        photoForm.addEventListener('submit', async function(e) {
+          e.preventDefault();
+          
+          // Check photo limit
+          if (allPhotos.length >= 999) {
+            if (photoFormMessage) {
+              photoFormMessage.className = 'mt-4 p-4 rounded-lg bg-red-50 border border-red-200 text-red-800';
+              photoFormMessage.textContent = 'Maximum limit of 999 photos reached. Please delete some photos first.';
+              photoFormMessage.classList.remove('hidden');
+              setTimeout(() => photoFormMessage.classList.add('hidden'), 5000);
+            }
+            return;
+          }
+          
+          // Show loading state
+          if (addPhotoText) addPhotoText.classList.add('hidden');
+          if (addPhotoLoading) addPhotoLoading.classList.remove('hidden');
+          if (addPhotoBtn) addPhotoBtn.disabled = true;
+          
+          // Get form data
+          const formData = new FormData(photoForm);
+          const photoData = {
+            id: Date.now().toString(),
+            type: 'photo',
+            photo_url: formData.get('photo-url'),
+            photo_title: formData.get('photo-title'),
+            photo_description: formData.get('photo-description'),
+            photo_category: formData.get('photo-category'),
+            photo_location: formData.get('photo-location'),
+            created_at: new Date().toISOString()
+          };
+          
+          try {
+            // Save using Universal Storage Manager
+            const result = await StorageManager.create(photoData);
+            
+            if (result.isOk) {
+              // Show success message
+              if (photoFormMessage) {
+                photoFormMessage.className = 'mt-4 p-4 rounded-lg bg-green-50 border border-green-200 text-green-800';
+                photoFormMessage.textContent = 'Photo added successfully to your gallery!';
+                photoFormMessage.classList.remove('hidden');
+              }
+              
+              // Reset form
+              photoForm.reset();
+            } else {
+              throw new Error('Failed to save photo');
+            }
+          } catch (error) {
+            // Show error message
+            if (photoFormMessage) {
+              photoFormMessage.className = 'mt-4 p-4 rounded-lg bg-red-50 border border-red-200 text-red-800';
+              photoFormMessage.textContent = 'Sorry, there was an error adding the photo. Please try again.';
+              photoFormMessage.classList.remove('hidden');
+            }
+          } finally {
+            // Reset button state
+            if (addPhotoText) addPhotoText.classList.remove('hidden');
+            if (addPhotoLoading) addPhotoLoading.classList.add('hidden');
+            if (addPhotoBtn) addPhotoBtn.disabled = false;
+            
+            // Hide message after 5 seconds
+            setTimeout(() => {
+              if (photoFormMessage) photoFormMessage.classList.add('hidden');
+            }, 5000);
+          }
+        });
+      }
+
+      // Filter buttons
+      const filterButtons = document.querySelectorAll('.filter-btn');
+      filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          // Update active state
+          filterButtons.forEach(btn => {
+            btn.classList.remove('active', 'bg-blue-600', 'text-white');
+            btn.classList.add('bg-gray-200', 'text-gray-700');
+          });
+          
+          this.classList.add('active', 'bg-blue-600', 'text-white');
+          this.classList.remove('bg-gray-200', 'text-gray-700');
+          
+          // Update filter and re-render
+          currentFilter = this.dataset.filter;
+          renderGallery();
+        });
+      });
+
+      // Modal controls
+      const closeModalBtn = document.getElementById('close-modal');
+      const deletePhotoBtn = document.getElementById('delete-photo-btn');
+      const photoModal = document.getElementById('photo-modal');
+
+      if (closeModalBtn) {
+        closeModalBtn.addEventListener('click', closePhotoModal);
+      }
+
+      if (photoModal) {
+        photoModal.addEventListener('click', function(e) {
+          if (e.target === photoModal) {
+            closePhotoModal();
+          }
+        });
+      }
+
+      if (deletePhotoBtn) {
+        deletePhotoBtn.addEventListener('click', async function() {
+          if (!currentPhotoForDeletion || !isAdminMode) return;
+          
+          // Show confirmation by changing button text
+          if (this.textContent === 'Delete Photo (Admin Only)') {
+            this.textContent = 'Confirm Delete?';
+            this.classList.add('bg-red-700');
+            setTimeout(() => {
+              if (this.textContent === 'Confirm Delete?') {
+                this.textContent = 'Delete Photo (Admin Only)';
+                this.classList.remove('bg-red-700');
+              }
+            }, 3000);
+            return;
+          }
+          
+          // Proceed with deletion
+          this.disabled = true;
+          this.textContent = 'Deleting...';
+          
+          try {
+            const result = await StorageManager.delete(currentPhotoForDeletion);
+            
+            if (result.isOk) {
+              closePhotoModal();
+            } else {
+              throw new Error('Failed to delete photo');
+            }
+          } catch (error) {
+            // Show inline error message
+            const errorMsg = document.createElement('div');
+            errorMsg.className = 'mt-2 p-2 bg-red-100 border border-red-300 text-red-700 text-sm rounded';
+            errorMsg.textContent = 'Error deleting photo. Please try again.';
+            this.parentElement.appendChild(errorMsg);
+            setTimeout(() => errorMsg.remove(), 3000);
+          } finally {
+            this.disabled = false;
+            this.textContent = 'Delete Photo (Admin Only)';
+            this.classList.remove('bg-red-700');
+          }
+        });
+      }
+
+      // Intersection Observer for animations
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+
+      const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate');
+          }
+        });
+      }, observerOptions);
+
+      // Observe all animation elements
+      const animationElements = document.querySelectorAll('.fade-in-up, .fade-in-left, .fade-in-right, .scale-in, .bounce-in');
+      animationElements.forEach(element => {
+        observer.observe(element);
+      });
+
+      // CTA button click handler
+      const ctaButton = document.getElementById('cta-button');
+      if (ctaButton) {
+        ctaButton.addEventListener('click', function() {
+          const bookingSection = document.getElementById('mc-booking') || document.getElementById('contact');
+          if (bookingSection) bookingSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+      }
+
+      // Hide storage indicator after 5 seconds
+      setTimeout(() => {
+        const indicator = document.getElementById('storage-indicator');
+        if (indicator) {
+          indicator.style.opacity = '0';
+          setTimeout(() => indicator.style.display = 'none', 300);
+        }
+      }, 5000);
+    });
+  </script>
+</body>
+</html>
